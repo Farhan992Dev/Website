@@ -1,0 +1,152 @@
+:root {
+  /* Colors */
+  --surface: #f7f9fb;
+  --surface-dim: #d8dadc;
+  --surface-bright: #f7f9fb;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f2f4f6;
+  --surface-container: #eceef0;
+  --surface-container-high: #e6e8ea;
+  --surface-container-highest: #e0e3e5;
+  --on-surface: #191c1e;
+  --on-surface-variant: #45464d;
+  --inverse-surface: #2d3133;
+  --inverse-on-surface: #eff1f3;
+  --outline: #76777d;
+  --outline-variant: #c6c6cd;
+  --surface-tint: #565e74;
+  --primary: #000000;
+  --on-primary: #ffffff;
+  --primary-container: #131b2e;
+  --on-primary-container: #7c839b;
+  --inverse-primary: #bec6e0;
+  --secondary: #00687a;
+  --on-secondary: #ffffff;
+  --secondary-container: #57dffe;
+  --on-secondary-container: #006172;
+  --tertiary: #000000;
+  --on-tertiary: #ffffff;
+  --tertiary-container: #0d1c2f;
+  --on-tertiary-container: #76859b;
+  --error: #ba1a1a;
+  --on-error: #ffffff;
+  --error-container: #ffdad6;
+  --on-error-container: #93000a;
+  --primary-fixed: #dae2fd;
+  --primary-fixed-dim: #bec6e0;
+  --on-primary-fixed: #131b2e;
+  --on-primary-fixed-variant: #3f465c;
+  --secondary-fixed: #acedff;
+  --secondary-fixed-dim: #4cd7f6;
+  --on-secondary-fixed: #001f26;
+  --on-secondary-fixed-variant: #004e5c;
+  --tertiary-fixed: #d5e3fd;
+  --tertiary-fixed-dim: #b9c7e0;
+  --on-tertiary-fixed: #0d1c2f;
+  --on-tertiary-fixed-variant: #3a485c;
+  --background: #f7f9fb;
+  --on-background: #191c1e;
+  --surface-variant: #e0e3e5;
+
+  /* Typography */
+  --font-family: 'IRANSans', system-ui, -apple-system, sans-serif;
+
+  --headline-xl-size: 40px;
+  --headline-xl-weight: 700;
+  --headline-xl-line-height: 56px;
+
+  --headline-lg-size: 32px;
+  --headline-lg-weight: 700;
+  --headline-lg-line-height: 48px;
+
+  --headline-md-size: 24px;
+  --headline-md-weight: 500;
+  --headline-md-line-height: 36px;
+
+  --body-lg-size: 18px;
+  --body-lg-weight: 400;
+  --body-lg-line-height: 32px;
+
+  --body-md-size: 16px;
+  --body-md-weight: 400;
+  --body-md-line-height: 28px;
+
+  --label-md-size: 14px;
+  --label-md-weight: 500;
+  --label-md-line-height: 20px;
+
+  --headline-lg-mobile-size: 28px;
+  --headline-lg-mobile-weight: 700;
+  --headline-lg-mobile-line-height: 40px;
+
+  /* Border Radius */
+  --rounded-sm: 0.25rem;
+  --rounded-default: 0.5rem;
+  --rounded-md: 0.75rem;
+  --rounded-lg: 1rem;
+  --rounded-xl: 1.5rem;
+  --rounded-full: 9999px;
+
+  /* Spacing */
+  --container-max: 1280px;
+  --gutter: 24px;
+  --margin-mobile: 16px;
+  --margin-desktop: 48px;
+  --stack-sm: 8px;
+  --stack-md: 16px;
+  --stack-lg: 32px;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background);
+  color: var(--on-background);
+  margin: 0;
+  padding: 0;
+  direction: rtl; /* Right to left layout for Persian */
+}
+
+/* Typography Classes */
+.headline-xl {
+  font-size: var(--headline-xl-size);
+  font-weight: var(--headline-xl-weight);
+  line-height: var(--headline-xl-line-height);
+}
+
+.headline-lg {
+  font-size: var(--headline-lg-size);
+  font-weight: var(--headline-lg-weight);
+  line-height: var(--headline-lg-line-height);
+}
+
+.headline-md {
+  font-size: var(--headline-md-size);
+  font-weight: var(--headline-md-weight);
+  line-height: var(--headline-md-line-height);
+}
+
+.body-lg {
+  font-size: var(--body-lg-size);
+  font-weight: var(--body-lg-weight);
+  line-height: var(--body-lg-line-height);
+}
+
+.body-md {
+  font-size: var(--body-md-size);
+  font-weight: var(--body-md-weight);
+  line-height: var(--body-md-line-height);
+}
+
+.label-md {
+  font-size: var(--label-md-size);
+  font-weight: var(--label-md-weight);
+  line-height: var(--label-md-line-height);
+}
+
+@media (max-width: 768px) {
+  .headline-lg {
+    font-size: var(--headline-lg-mobile-size);
+    font-weight: var(--headline-lg-mobile-weight);
+    line-height: var(--headline-lg-mobile-line-height);
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "navigation": {
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "cta": {
+    "startProject": "Start a Project",
+    "viewServices": "View Services"
+  }
+}

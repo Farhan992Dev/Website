@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="fa"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>خدمات | توسعه‌گران نوین</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&display=swap');
+        
+        :root {
+            --notoSans: 'Noto Sans Arabic', sans-serif;
+        }
+
+        body {
+            font-family: var(--notoSans);
+            scroll-behavior: smooth;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .service-hover-card:hover {
+            transform: translateY(-4px);
+            border-color: #00687a;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #000000 0%, #00687a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#acedff",
+                        "on-tertiary-container": "#75859d",
+                        "secondary-fixed-dim": "#4cd7f6",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "inverse-primary": "#bec6e0",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#0b1c30",
+                        "on-secondary-fixed": "#001f26",
+                        "primary": "#000000",
+                        "surface-bright": "#f7f9fb",
+                        "on-surface-variant": "#45464d",
+                        "on-secondary-container": "#006172",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#565e74",
+                        "tertiary-fixed": "#d3e4fe",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "surface-container-low": "#f2f4f6",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "on-primary-fixed": "#131b2e",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#000000",
+                        "on-background": "#191c1e",
+                        "surface-container-highest": "#e0e3e5",
+                        "inverse-surface": "#2d3133",
+                        "surface-variant": "#e0e3e5",
+                        "background": "#f7f9fb",
+                        "surface-container": "#eceef0",
+                        "outline-variant": "#c6c6cd",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#dae2fd",
+                        "inverse-on-surface": "#eff1f3",
+                        "secondary-container": "#57dffe",
+                        "primary-container": "#131b2e",
+                        "outline": "#76777d",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "on-primary-container": "#7c839b",
+                        "on-secondary": "#ffffff",
+                        "surface": "#f7f9fb",
+                        "secondary": "#00687a",
+                        "on-surface": "#191c1e",
+                        "surface-dim": "#d8dadc",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "base": "4px",
+                        "gutter": "24px",
+                        "xs": "8px",
+                        "xl": "64px",
+                        "sm": "16px",
+                        "margin-desktop": "80px",
+                        "lg": "40px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Noto Sans Arabic"],
+                        "headline-xl": ["Noto Sans Arabic"],
+                        "body-lg": ["Noto Sans Arabic"],
+                        "label-md": ["Noto Sans Arabic"],
+                        "headline-lg-mobile": ["Noto Sans Arabic"],
+                        "body-md": ["Noto Sans Arabic"],
+                        "headline-lg": ["Noto Sans Arabic"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {"lineHeight": "60px", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "38px", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "44px", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant shadow-sm">
+<div class="flex justify-between items-center px-margin-desktop max-w-[1280px] mx-auto h-20 rtl">
+<div class="font-headline-md text-headline-md font-bold text-primary">توسعه‌گران نوین</div>
+<nav class="hidden md:flex gap-md items-center">
+<a class="font-notoSans text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">خانه</a>
+<a class="font-notoSans text-label-md text-secondary border-b-2 border-secondary pb-1" href="#">خدمات</a>
+<a class="font-notoSans text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">نمونه‌کارها</a>
+<a class="font-notoSans text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">درباره ما</a>
+<a class="font-notoSans text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">تماس</a>
+</nav>
+<button class="bg-primary text-on-primary px-sm py-xs rounded-lg font-label-md transition-transform active:scale-95 duration-150">
+                شروع پروژه
+            </button>
+</div>
+</header>
+<main class="pt-32 pb-xl max-w-[1280px] mx-auto px-margin-desktop rtl">
+<!-- Hero Section -->
+<section class="mb-xl text-center">
+<h1 class="font-headline-xl text-headline-xl mb-sm gradient-text">خدمات مهندسی نرم‌افزار</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                ما با بهره‌گیری از آخرین تکنولوژی‌های روز دنیا، راهکارهای دیجیتال هوشمند و مقیاس‌پذیری را برای کسب‌وکار شما خلق می‌کنیم.
+            </p>
+</section>
+<!-- Services Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Service 1: Custom Web Design -->
+<div class="md:col-span-8 group service-hover-card glass-card p-lg rounded-xl transition-all duration-300">
+<div class="flex flex-col md:flex-row gap-lg">
+<div class="flex-1">
+<span class="material-symbols-outlined text-[48px] text-secondary mb-sm">language</span>
+<h3 class="font-headline-lg text-headline-lg mb-sm">طراحی وب‌سایت اختصاصی</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">
+                            خلق تجربه‌های کاربری منحصر به فرد با تمرکز بر سرعت، امنیت و سئو. ما وب‌سایت‌هایی می‌سازیم که هویت برند شما را تقویت می‌کنند.
+                        </p>
+<ul class="space-y-xs">
+<li class="flex items-center gap-xs font-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span> طراحی رابط کاربری (UI/UX) مدرن
+                            </li>
+<li class="flex items-center gap-xs font-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span> بهینه‌سازی کامل برای موتورهای جستجو
+                            </li>
+<li class="flex items-center gap-xs font-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span> معماری میکروسرویس برای مقیاس‌پذیری
+                            </li>
+</ul>
+</div>
+<div class="flex-1 min-h-[240px] rounded-lg overflow-hidden relative border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist high-tech laptop displaying a sophisticated dark mode dashboard with cyan data visualizations. The background is a bright, professional office space with soft daylight and plenty of whitespace. 8k resolution, professional architectural photography style, corporate modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCobRhzYSOrI2jbZotEV3A3FFicH5MFF5oFQCjlLt1lmnYCUHBGF5SIfc-MqtoV7qxMxORO5rK_Vh0CV-6c_rf7rknlbjyH_iJuv9LSLi0A7xk9O2GGdMGD_P61EhG4FP4ma0m4jjJKrtwT1ZWS3qKx6fAkz1aq2T3PaxphHoSssRXReWdjiwf2XxoIWu1SsjFFUZHq5ykpiR54lebIA6OSjKrweG1YGVyqGOsD5kZUiKslMTClyLnBm25TYR9niGaKNS4TSpoRR8E"/>
+</div>
+</div>
+</div>
+<!-- Service 2: Mobile Apps -->
+<div class="md:col-span-4 group service-hover-card glass-card p-lg rounded-xl transition-all duration-300 flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-[48px] text-secondary mb-sm">smartphone</span>
+<h3 class="font-headline-md text-headline-md mb-sm">اپلیکیشن موبایل</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">
+                        توسعه اپلیکیشن‌های Native و Hybrid با عملکردی روان و پایدار در پلتفرم‌های iOS و Android.
+                    </p>
+</div>
+<div class="space-y-xs mt-auto">
+<div class="h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-3/4"></div>
+</div>
+<span class="text-xs font-label-md text-on-surface-variant">بهره‌وری حداکثری در منابع سیستم</span>
+</div>
+</div>
+<!-- Service 3: Enterprise Systems -->
+<div class="md:col-span-4 group service-hover-card glass-card p-lg rounded-xl transition-all duration-300">
+<span class="material-symbols-outlined text-[48px] text-secondary mb-sm">account_tree</span>
+<h3 class="font-headline-md text-headline-md mb-sm">سیستم‌های سازمانی</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">
+                    اتوماسیون فرآیندها و سیستم‌های ERP اختصاصی برای مدیریت دقیق منابع و داده‌های کلان در مجموعه‌های بزرگ.
+                </p>
+<div class="flex flex-wrap gap-xs">
+<span class="bg-surface-container px-xs py-1 rounded-full text-xs font-label-md text-primary">CRM</span>
+<span class="bg-surface-container px-xs py-1 rounded-full text-xs font-label-md text-primary">ERP</span>
+<span class="bg-surface-container px-xs py-1 rounded-full text-xs font-label-md text-primary">Data BI</span>
+</div>
+</div>
+<!-- Service 4: Support -->
+<div class="md:col-span-8 group service-hover-card glass-card p-lg rounded-xl transition-all duration-300">
+<div class="flex flex-col md:flex-row-reverse gap-lg items-center">
+<div class="flex-1">
+<span class="material-symbols-outlined text-[48px] text-secondary mb-sm">support_agent</span>
+<h3 class="font-headline-lg text-headline-lg mb-sm">پشتیبانی و نگهداری</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">
+                            تضمین پایداری و امنیت مداوم پروژه‌ها با تیم پشتیبانی فنی ۷/۲۴. ما در تمام مسیر رشد کنار شما هستیم.
+                        </p>
+<button class="border border-primary text-primary px-md py-xs rounded-lg font-label-md hover:bg-primary hover:text-on-primary transition-all">
+                            مشاهده پکیج‌های پشتیبانی
+                        </button>
+</div>
+<div class="w-full md:w-1/3 h-40 flex items-center justify-center bg-surface-container-low rounded-lg border-dashed border-2 border-outline">
+<span class="material-symbols-outlined text-[64px] text-outline-variant animate-pulse">monitoring</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Why Us Section -->
+<section class="mt-xl py-xl border-t border-outline-variant">
+<div class="text-center mb-lg">
+<h2 class="font-headline-lg text-headline-lg mb-sm">چرا توسعه‌گران نوین؟</h2>
+<div class="w-20 h-1 bg-secondary mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg text-center">
+<div class="p-md">
+<div class="w-16 h-16 bg-secondary-fixed rounded-full flex items-center justify-center mx-auto mb-sm">
+<span class="material-symbols-outlined text-on-secondary-fixed text-3xl">verified</span>
+</div>
+<h4 class="font-headline-md text-headline-md mb-xs">تخصص و تجربه</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">تیم ما متشکل از نخبگانی است که پیچیده‌ترین پروژه‌های نرم‌افزاری را با موفقیت پشت سر گذاشته‌اند.</p>
+</div>
+<div class="p-md">
+<div class="w-16 h-16 bg-secondary-fixed rounded-full flex items-center justify-center mx-auto mb-sm">
+<span class="material-symbols-outlined text-on-secondary-fixed text-3xl">speed</span>
+</div>
+<h4 class="font-headline-md text-headline-md mb-xs">سرعت و دقت</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">تحویل به موقع با بالاترین استانداردهای کیفی، اولویت همیشگی در فرآیندهای چابک ماست.</p>
+</div>
+<div class="p-md">
+<div class="w-16 h-16 bg-secondary-fixed rounded-full flex items-center justify-center mx-auto mb-sm">
+<span class="material-symbols-outlined text-on-secondary-fixed text-3xl">security</span>
+</div>
+<h4 class="font-headline-md text-headline-md mb-xs">امنیت و شفافیت</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">تمامی مراحل توسعه با شفافیت کامل گزارش شده و امنیت داده‌های شما اولویت اول ماست.</p>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="mt-xl bg-primary-container p-xl rounded-2xl text-center relative overflow-hidden">
+
+<div class="relative z-10">
+<h2 class="font-headline-lg text-headline-lg text-on-primary mb-md">آماده‌اید تحول دیجیتال خود را شروع کنید؟</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container mb-lg max-w-xl mx-auto">
+                    همین امروز با مشاوران فنی ما تماس بگیرید تا بهترین نقشه راه را برای پروژه شما ترسیم کنیم.
+                </p>
+<div class="flex gap-md justify-center">
+<button class="bg-secondary text-on-primary px-lg py-sm rounded-lg font-headline-md shadow-lg transition-transform hover:scale-105 active:scale-95">
+                        مشاوره رایگان
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-xl bg-surface-container-lowest border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-md px-margin-desktop py-lg max-w-[1280px] mx-auto rtl">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-md text-headline-md font-bold text-primary mb-sm">توسعه‌گران نوین</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    پیشرو در ارائه راهکارهای نوین نرم‌افزاری و تحول دیجیتال در ایران.
+                </p>
+</div>
+<div>
+<h5 class="font-headline-md text-primary mb-sm">خدمات</h5>
+<ul class="space-y-xs">
+<li><a class="font-body-md text-on-surface-variant hover:translate-x-[-4px] transition-transform inline-block" href="#">خدمات نرم‌افزاری</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:translate-x-[-4px] transition-transform inline-block" href="#">توسعه وب</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:translate-x-[-4px] transition-transform inline-block" href="#">اپلیکیشن موبایل</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:translate-x-[-4px] transition-transform inline-block" href="#">مشاوره فنی</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-headline-md text-primary mb-sm">دسترسی سریع</h5>
+<ul class="space-y-xs">
+<li><a class="font-body-md text-on-surface-variant hover:translate-x-[-4px] transition-transform inline-block" href="#">درباره ما</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:translate-x-[-4px] transition-transform inline-block" href="#">نمونه‌کارها</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:translate-x-[-4px] transition-transform inline-block" href="#">تماس با ما</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:translate-x-[-4px] transition-transform inline-block" href="#">وبلاگ</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-headline-md text-primary mb-sm">ارتباط با ما</h5>
+<div class="flex gap-sm">
+<span class="material-symbols-outlined text-secondary hover:scale-110 transition-transform cursor-pointer">share</span>
+<span class="material-symbols-outlined text-secondary hover:scale-110 transition-transform cursor-pointer">alternate_email</span>
+<span class="material-symbols-outlined text-secondary hover:scale-110 transition-transform cursor-pointer">call</span>
+</div>
+</div>
+</div>
+<div class="text-center py-md border-t border-outline-variant font-body-md text-on-surface-variant">
+            © ۱۴۰۲ تمامی حقوق برای توسعه‌گران نوین محفوظ است
+        </div>
+</footer>
+<script>
+        // Simple Interaction logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.service-hover-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.boxShadow = "0 10px 15px -3px rgba(15, 23, 42, 0.05)";
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.boxShadow = "none";
+                });
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,11 @@
+{
+  "navigation": {
+    "services": "خدمات",
+    "about": "درباره ما",
+    "contact": "تماس با ما"
+  },
+  "cta": {
+    "startProject": "شروع پروژه",
+    "viewServices": "مشاهده خدمات"
+  }
+}

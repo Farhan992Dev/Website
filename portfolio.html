@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="fa"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>نمونه‌کارها | توسعه‌گران نوین</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @font-face {
+            font-family: 'notoSans';
+            src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&display=swap');
+        }
+        @font-face {
+            font-family: 'ibmPlexSans';
+            src: url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100..700&display=swap');
+        }
+        body {
+            font-family: 'notoSans', sans-serif;
+            background-color: #f7f9fb;
+            color: #191c1e;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        .filter-btn.active {
+            background-color: #000000;
+            color: #ffffff;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#acedff",
+                    "on-tertiary-container": "#75859d",
+                    "secondary-fixed-dim": "#4cd7f6",
+                    "on-tertiary-fixed-variant": "#38485d",
+                    "inverse-primary": "#bec6e0",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#0b1c30",
+                    "on-secondary-fixed": "#001f26",
+                    "primary": "#000000",
+                    "surface-bright": "#f7f9fb",
+                    "on-surface-variant": "#45464d",
+                    "on-secondary-container": "#006172",
+                    "on-error": "#ffffff",
+                    "surface-tint": "#565e74",
+                    "tertiary-fixed": "#d3e4fe",
+                    "on-tertiary-fixed": "#0b1c30",
+                    "on-secondary-fixed-variant": "#004e5c",
+                    "surface-container-low": "#f2f4f6",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "on-primary-fixed": "#131b2e",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-container-lowest": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#000000",
+                    "on-background": "#191c1e",
+                    "surface-container-highest": "#e0e3e5",
+                    "inverse-surface": "#2d3133",
+                    "surface-variant": "#e0e3e5",
+                    "background": "#f7f9fb",
+                    "surface-container": "#eceef0",
+                    "outline-variant": "#c6c6cd",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#dae2fd",
+                    "inverse-on-surface": "#eff1f3",
+                    "secondary-container": "#57dffe",
+                    "primary-container": "#131b2e",
+                    "outline": "#76777d",
+                    "tertiary-fixed-dim": "#b7c8e1",
+                    "on-primary-container": "#7c839b",
+                    "on-secondary": "#ffffff",
+                    "surface": "#f7f9fb",
+                    "secondary": "#00687a",
+                    "on-surface": "#191c1e",
+                    "surface-dim": "#d8dadc",
+                    "primary-fixed-dim": "#bec6e0",
+                    "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "base": "4px",
+                    "gutter": "24px",
+                    "xs": "8px",
+                    "xl": "64px",
+                    "sm": "16px",
+                    "margin-desktop": "80px",
+                    "lg": "40px",
+                    "md": "24px"
+            },
+            "fontFamily": {
+                    "headline-md": ["notoSans"],
+                    "headline-xl": ["notoSans"],
+                    "body-lg": ["notoSans"],
+                    "label-md": ["ibmPlexSans"],
+                    "headline-lg-mobile": ["notoSans"],
+                    "body-md": ["notoSans"],
+                    "headline-lg": ["notoSans"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-xl": ["48px", {"lineHeight": "60px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "38px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "44px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant shadow-sm h-20 rtl">
+<div class="flex justify-between items-center px-margin-desktop max-w-[1280px] mx-auto h-full">
+<div class="font-headline-md text-headline-md font-bold text-primary">توسعه‌گران نوین</div>
+<div class="hidden md:flex items-center gap-lg font-notoSans text-label-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">خانه</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">خدمات</a>
+<a class="text-secondary border-b-2 border-secondary pb-1" href="#">نمونه‌کارها</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">درباره ما</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">تماس</a>
+</div>
+<button class="bg-primary text-on-primary px-md py-xs rounded-full font-label-md hover:opacity-90 active:scale-95 transition-all">
+                شروع پروژه
+            </button>
+</div>
+</nav>
+<main class="pt-32 pb-xl max-w-[1280px] mx-auto px-margin-desktop">
+<!-- Hero Section -->
+<section class="mb-xl text-center md:text-right">
+<h1 class="font-headline-xl text-headline-xl mb-md text-primary">پروژه‌های شاخص</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                ترکیبی از دقت مهندسی و خلاقیت هنری. ما ایده‌های پیچیده را به واقعیت‌های دیجیتال تبدیل می‌کنیم. در اینجا برخی از پروژه‌های اخیر ما را مشاهده می‌کنید.
+            </p>
+</section>
+<!-- Category Filters -->
+<div class="flex flex-wrap gap-sm mb-lg border-b border-outline-variant pb-md">
+<button class="filter-btn active px-md py-xs rounded-lg font-label-md border border-outline-variant transition-all hover:border-primary" data-category="all">همه پروژه‌ها</button>
+<button class="filter-btn px-md py-xs rounded-lg font-label-md border border-outline-variant transition-all hover:border-primary" data-category="ecommerce">فروشگاهی</button>
+<button class="filter-btn px-md py-xs rounded-lg font-label-md border border-outline-variant transition-all hover:border-primary" data-category="corporate">شرکتی</button>
+<button class="filter-btn px-md py-xs rounded-lg font-label-md border border-outline-variant transition-all hover:border-primary" data-category="startup">استارتاپ</button>
+</div>
+<!-- Portfolio Grid (Bento Style & Standard Mix) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-md" id="portfolio-grid">
+<!-- Large Feature Project -->
+<div class="md:col-span-8 group project-card relative overflow-hidden bg-surface-container-lowest border border-outline-variant rounded-xl transition-all hover:shadow-lg" data-category="ecommerce">
+<div class="aspect-video relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sophisticated e-commerce platform interface displayed on a sleek laptop, featuring high-end watch products. The UI is minimalist with clean lines, ample whitespace, and a deep navy and white color palette. Soft, professional studio lighting creates a premium retail atmosphere with elegant typography and subtle cyan accent buttons. The overall mood is luxurious, stable, and meticulously organized." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX5ZOz9wxeNJROmeUx0y9_8NwQyKkvHKdXjF4-couy59qDjTxAZ9AjkDkPfy8ELrAb23orYI-Hp8mzgn26-lBK0ph0zPF3t4G7zT90H3U-fJ3d27dkeVab03C7zcKm4Ea2YyhfcPp2zv4jLpsIw5KWuJS4ESb2FJKABb4FM5c8fJqSgJn-XKO6064tAcUyfSKaAkg9sgtbXmwGMyOv4B5EIVL41t7H3pM261ZLMes1JvEc3whTyxGSSdR5EaMzE7ZFlw4ZeAkS66U"/>
+<div class="project-overlay absolute inset-0 bg-primary/40 backdrop-blur-[2px] opacity-0 transition-opacity duration-300 flex items-center justify-center">
+<button class="bg-white text-primary px-lg py-sm rounded-full font-label-md flex items-center gap-xs">
+                            مشاهده جزئیات
+                            <span class="material-symbols-outlined">arrow_back</span>
+</button>
+</div>
+</div>
+<div class="p-md">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-xs">پلتفرم جامع اکسلسیور</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">بازطراحی زیرساخت فروشگاهی و تجربه کاربری برند لوکس ساعت.</p>
+</div>
+<div class="flex gap-xs">
+<span class="px-xs py-[2px] bg-surface-container text-primary rounded text-xs font-label-md">React</span>
+<span class="px-xs py-[2px] bg-surface-container text-primary rounded text-xs font-label-md">Node.js</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Side Project -->
+<div class="md:col-span-4 group project-card relative overflow-hidden bg-surface-container-lowest border border-outline-variant rounded-xl transition-all hover:shadow-lg" data-category="corporate">
+<div class="aspect-[4/5] relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A professional corporate website dashboard showing complex data visualization with elegant charts and clean grids. The design uses a sophisticated palette of slate gray, navy, and white with cyan highlights for data points. The layout is perfectly balanced on a 12-column grid, emphasizing intellectual authority and technical transparency. Soft ambient lighting suggests a high-end corporate office environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANpp1dVvOPLwCW0qWrKtkEjeRHb0cdU4w7jIjS6Qdp9STO2PGNCuiq4Kl59xnJnM8zq81RscjKjncxy2LUUpmdsonV8QPoALqzuGm3wih6xbPXjhM6HeYBdNM-soosgZpPt3rS1rCQont3k9levHZaiTVWxwns3pWaGFOBaed5_lWJKaztmu2_LYOb51itrhm1PPVCZv1bhniqWuuUstF-TChYX3EDwtLxskv_IZIRGKN7Xbpge4E0pgxxMP84sxBw91Ig0ewlyLE"/>
+<div class="project-overlay absolute inset-0 bg-primary/40 backdrop-blur-[2px] opacity-0 transition-opacity duration-300 flex items-center justify-center">
+<button class="bg-white text-primary px-md py-xs rounded-full font-label-md">مشاهده</button>
+</div>
+</div>
+<div class="p-md">
+<h3 class="font-headline-md text-headline-md text-primary mb-xs">پرتال سازمانی آتین</h3>
+<div class="flex gap-xs mt-sm">
+<span class="px-xs py-[2px] bg-surface-container text-primary rounded text-xs font-label-md">Next.js</span>
+</div>
+</div>
+</div>
+<!-- Smaller Projects -->
+<div class="md:col-span-4 group project-card relative overflow-hidden bg-surface-container-lowest border border-outline-variant rounded-xl transition-all hover:shadow-lg" data-category="startup">
+<div class="aspect-square relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A modern mobile app interface for a fintech startup, featuring glassmorphism elements and vibrant gradient backgrounds in shades of teal and navy. The screen shows a clean wallet balance and transaction history with futuristic iconography. The style is professional and minimalist, avoiding flashy trends for a more stable and established corporate-modern feel. High resolution and clear visual hierarchy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdiWP0bxCXqdXgw_F1CFjpCk9GhGCKv1i9hCQhX0frsMzNtglwKx0tg-_FKLDpHtDmljGZULkfHhsAQNDbHw20C5E-OGatGVov6vveAlU4rjGkKqXsQVlwDpkzC7h78RlQL6tHsBm92Jct4IIg2ExtFOe0VWnBNwYFhU_X8JwZyzoxGpr4xDcLSD2PZBJf0lovK3h5StK9ioh3CNRvLsjJa9FVOF_7NMI-dNXEpdD_ZpRnsTTuAbDM3D18l_idnR9mNvTbMi5axjw"/>
+</div>
+<div class="p-md">
+<h3 class="font-headline-md text-headline-md text-primary mb-xs">اپلیکیشن فین‌تک پی‌نو</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">راهکار پرداخت هوشمند برای کسب‌وکارهای نوپا.</p>
+</div>
+</div>
+<div class="md:col-span-4 group project-card relative overflow-hidden bg-surface-container-lowest border border-outline-variant rounded-xl transition-all hover:shadow-lg" data-category="corporate">
+<div class="aspect-square relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist architecture firm website landing page with large, high-quality photography of modern buildings. The UI features extremely clean typography, wide margins, and a heavy, premium anchor header. The color scheme is strictly black and white with a focus on mathematical harmony and architectural integrity. The lighting is bright and airy, reflecting a high-end service aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI2_N28nJj9z_6xFYXGDN2iQ4l1sU1LG2A5k5k1FV2QnJyGYUq3zOW6bmKAvb_vi5utUZ3EtRM-jAcZ-p-h38mrZ9nWZWHNwvnyd36i_mAFgYK6eDnkvAacgK8Aaaz8fI6yNc7XKS4Npc-KjHkV-w6MJgQ-kCLZH4UkGlniA-OMtQtX8uSKRKMWNqIelnHCeh7uzzEsHYZCRpN2JgDQLoiVGwLAkDAvYFm-7aiC8jLK9Emk8GaBpQ2yIlgDDCr_y5UwmQO_-I5e_o"/>
+</div>
+<div class="p-md">
+<h3 class="font-headline-md text-headline-md text-primary mb-xs">وب‌سایت استودیو آرک</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">نمایش پورتفولیو برای برترین دفتر معماری تهران.</p>
+</div>
+</div>
+<div class="md:col-span-4 group project-card relative overflow-hidden bg-surface-container-lowest border border-outline-variant rounded-xl transition-all hover:shadow-lg" data-category="ecommerce">
+<div class="aspect-square relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A clean, responsive food delivery website design with a focus on vibrant product photography and intuitive navigation. The layout uses tonal layers and low-contrast outlines to maintain a professional feel while being user-friendly. The branding uses navy and white with small cyan accents for call-to-action buttons. The scene is bright and meticulously organized to ensure clarity of thought and ease of use." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL9FPpes-ADhtzTuKCNmxAAIJsSnXX-MgdOoaZzynANUAjlWQEMnGWk1Y8RVXp5TVZs6ZaIS4FdDVohIU769424Hkad3aeYEfEnA1IdoKb9ZVWpWheyek2BM9yDVC6AF_nK68XOyPRRFUKr0pb0fW71P0NGbQRf6ZKoUchyFChqbN6xgy7at6IHYzZwysEg6AaTbjDM1GIVWO6TxiifpuKelqC-opWOkp15cxWRbNhCE0TIZ7DM6-YDrwwDqwo4XaQ3n9sBT7kPZc"/>
+</div>
+<div class="p-md">
+<h3 class="font-headline-md text-headline-md text-primary mb-xs">سامانه سفارش آنلاین نیکو</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">اتوماسیون کامل سفارش‌گیری و دلیوری غذا.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Call to Action -->
+<section class="bg-primary text-on-primary py-xl px-margin-desktop text-center relative overflow-hidden">
+<!-- Subtle Animated Background Component -->
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+
+</div>
+<div class="relative z-10 max-w-2xl mx-auto">
+<h2 class="font-headline-xl text-headline-xl mb-md">پروژه بعدی شما چیست؟</h2>
+<p class="font-body-lg text-body-lg mb-lg opacity-80">
+                ما آماده هستیم تا چالش‌های فنی شما را به فرصت‌های رشد تبدیل کنیم. تیم متخصص ما در تمام مراحل همراه شماست.
+            </p>
+<div class="flex flex-col sm:flex-row justify-center gap-md">
+<button class="bg-white text-primary px-xl py-md rounded-full font-label-md font-bold hover:bg-secondary-fixed transition-colors">
+                    درخواست مشاوره رایگان
+                </button>
+<button class="border border-white/30 text-white px-xl py-md rounded-full font-label-md hover:bg-white/10 transition-colors">
+                    مشاهده خدمات ما
+                </button>
+</div>
+</div>
+</section>
+<!-- Main Footer -->
+<footer class="w-full mt-xl border-t border-outline-variant bg-surface-container-lowest rtl">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-md px-margin-desktop py-lg max-w-[1280px] mx-auto">
+<!-- Brand Column -->
+<div class="md:col-span-1">
+<div class="font-headline-md text-headline-md font-bold text-primary mb-sm">توسعه‌گران نوین</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    پیشرو در ارائه راهکارهای نرم‌افزاری مدرن و توسعه محصولات دیجیتال با استانداردهای جهانی.
+                </p>
+</div>
+<!-- Links Column 1 -->
+<div>
+<h4 class="font-label-md font-bold text-primary mb-md">خدمات</h4>
+<ul class="space-y-xs">
+<li><a class="text-on-surface-variant hover:translate-x-[-4px] transition-transform duration-200 inline-block" href="#">توسعه وب</a></li>
+<li><a class="text-on-surface-variant hover:translate-x-[-4px] transition-transform duration-200 inline-block" href="#">اپلیکیشن موبایل</a></li>
+<li><a class="text-on-surface-variant hover:translate-x-[-4px] transition-transform duration-200 inline-block" href="#">مشاوره فنی</a></li>
+</ul>
+</div>
+<!-- Links Column 2 -->
+<div>
+<h4 class="font-label-md font-bold text-primary mb-md">شرکت</h4>
+<ul class="space-y-xs">
+<li><a class="text-on-surface-variant hover:translate-x-[-4px] transition-transform duration-200 inline-block" href="#">درباره ما</a></li>
+<li><a class="text-on-surface-variant hover:translate-x-[-4px] transition-transform duration-200 inline-block" href="#">تماس با ما</a></li>
+<li><a class="text-on-surface-variant hover:translate-x-[-4px] transition-transform duration-200 inline-block" href="#">فرصت‌های شغلی</a></li>
+</ul>
+</div>
+<!-- Contact/Social -->
+<div>
+<h4 class="font-label-md font-bold text-primary mb-md">ارتباط با ما</h4>
+<div class="flex gap-sm mb-md">
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">alternate_email</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">share</span>
+</a>
+</div>
+<p class="text-xs text-on-surface-variant">تهران، برج نوآوری، واحد ۴۰۲</p>
+</div>
+</div>
+<div class="border-t border-outline-variant/50 py-md text-center">
+<p class="font-body-md text-body-md text-on-surface-variant opacity-60">
+                © ۱۴۰۲ تمامی حقوق برای توسعه‌گران نوین محفوظ است
+            </p>
+</div>
+</footer>
+<script>
+        // Simple Filter Logic
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Active state toggle
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const category = btn.getAttribute('data-category');
+
+                projectCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                        // Add a small fade-in animation
+                        card.animate([
+                            { opacity: 0, transform: 'translateY(10px)' },
+                            { opacity: 1, transform: 'translateY(0)' }
+                        ], { duration: 300, fill: 'forwards' });
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Sticky Nav Shadow on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body></html>
