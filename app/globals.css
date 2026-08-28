@@ -3,8 +3,12 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'IRANSans';
-  src: url('/fonts/IranianSans.ttf') format('truetype');
+  font-family: "IRANSansX";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local("IRANSansX"),
+    url("../public/webfonts/woff/IRANSansXFaNum-Medium.woff") format("woff");
 }
 
 :root {
@@ -30,12 +34,12 @@
   --radius: 0.5rem;
 }
 
-[dir='rtl'] {
-  --app-font: 'IRANSans', 'IRANSansX', 'Vazirmatn', Tahoma, Arial, sans-serif;
+[dir="rtl"] {
+  --app-font: "IRANSans", "IRANSansX", "Vazirmatn", Tahoma, Arial, sans-serif;
 }
 
-[dir='ltr'] {
-  --app-font: 'Inter', 'Segoe UI', system-ui, sans-serif;
+[dir="ltr"] {
+  --app-font: "Inter", "Segoe UI", system-ui, sans-serif;
 }
 
 html {
@@ -47,6 +51,36 @@ body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
   font-family: var(--app-font);
+  background: #020319;
+  background: linear-gradient(
+    179deg,
+    rgba(2, 3, 25, 1) 41%,
+    rgba(58, 62, 199, 1) 100%
+  );
+}
+.bg-main {
+  /* background-color: #020319; */
+}
+.font-14 {
+  font-size: 14px !important;
+}
+.font-13 {
+  font-size: 13px !important;
+}
+.font-12 {
+  font-size: 12px !important;
+}
+.gradiant {
+  background: #66104c;
+  background: linear-gradient(
+    250deg,
+    rgba(102, 16, 76, 1) 0%,
+    rgba(17, 18, 128, 1) 57%
+  );
+}
+.hero-back {
+  background: url("../public/heroImage.png") no-repeat;
+  background-size: contain;
 }
 
 * {
@@ -58,7 +92,10 @@ body {
     background: rgba(0, 104, 122, 0.18);
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     text-wrap: balance;
   }
 

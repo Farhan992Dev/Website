@@ -1,363 +1,645 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<html dir="rtl" lang="fa"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=IRANSans:wght@100..900&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<style>
-        @font-face {
-            font-family: 'IRANSans';
-            src: url('https://cdn.jsdelivr.net/gh/rastikerdar/iran-sans@v1.0.0-alpha3/dist/font-face.css');
-        }
-        body {
-            font-family: 'IRANSans', sans-serif;
-            scroll-behavior: smooth;
-        }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            vertical-align: middle;
-        }
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 24px;
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
+<html dir="rtl" lang="fa">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IRANSans:wght@100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      @font-face {
+        font-family: "IRANSans";
+        src: url("https://cdn.jsdelivr.net/gh/rastikerdar/iran-sans@v1.0.0-alpha3/dist/font-face.css");
+      }
+      body {
+        font-family: "IRANSans", sans-serif;
+        scroll-behavior: smooth;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+        vertical-align: middle;
+      }
+      .bento-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 24px;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
     </style>
-<script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "error": "#ba1a1a",
-                      "primary": "#000000",
-                      "tertiary-fixed": "#d5e3fd",
-                      "on-error-container": "#93000a",
-                      "on-tertiary": "#ffffff",
-                      "tertiary": "#000000",
-                      "tertiary-fixed-dim": "#b9c7e0",
-                      "surface": "#f7f9fb",
-                      "surface-tint": "#565e74",
-                      "on-secondary-container": "#006172",
-                      "secondary-fixed": "#acedff",
-                      "surface-container-lowest": "#ffffff",
-                      "on-error": "#ffffff",
-                      "tertiary-container": "#0d1c2f",
-                      "on-tertiary-container": "#76859b",
-                      "surface-container-highest": "#e0e3e5",
-                      "outline-variant": "#c6c6cd",
-                      "background": "#f7f9fb",
-                      "on-primary": "#ffffff",
-                      "on-surface-variant": "#45464d",
-                      "secondary-fixed-dim": "#4cd7f6",
-                      "surface-variant": "#e0e3e5",
-                      "on-primary-container": "#7c839b",
-                      "on-secondary-fixed-variant": "#004e5c",
-                      "inverse-primary": "#bec6e0",
-                      "outline": "#76777d",
-                      "on-tertiary-fixed": "#0d1c2f",
-                      "secondary-container": "#57dffe",
-                      "on-primary-fixed": "#131b2e",
-                      "on-background": "#191c1e",
-                      "on-secondary-fixed": "#001f26",
-                      "on-primary-fixed-variant": "#3f465c",
-                      "on-secondary": "#ffffff",
-                      "primary-fixed": "#dae2fd",
-                      "on-surface": "#191c1e",
-                      "primary-fixed-dim": "#bec6e0",
-                      "surface-dim": "#d8dadc",
-                      "surface-bright": "#f7f9fb",
-                      "surface-container": "#eceef0",
-                      "surface-container-low": "#f2f4f6",
-                      "primary-container": "#131b2e",
-                      "error-container": "#ffdad6",
-                      "secondary": "#00687a",
-                      "surface-container-high": "#e6e8ea",
-                      "inverse-on-surface": "#eff1f3",
-                      "inverse-surface": "#2d3133",
-                      "on-tertiary-fixed-variant": "#3a485c"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.25rem",
-                      "lg": "0.5rem",
-                      "xl": "0.75rem",
-                      "full": "9999px"
-              },
-              "spacing": {
-                      "gutter": "24px",
-                      "margin-desktop": "48px",
-                      "container-max": "1280px",
-                      "stack-sm": "8px",
-                      "stack-md": "16px",
-                      "stack-lg": "32px",
-                      "margin-mobile": "16px"
-              },
-              "fontFamily": {
-                      "body-md": ["IRANSans"],
-                      "headline-lg": ["IRANSans"],
-                      "label-md": ["IRANSans"],
-                      "body-lg": ["IRANSans"],
-                      "headline-md": ["IRANSans"],
-                      "headline-lg-mobile": ["IRANSans"],
-                      "headline-xl": ["IRANSans"]
-              },
-              "fontSize": {
-                      "body-md": ["16px", {"lineHeight": "28px", "fontWeight": "400"}],
-                      "headline-lg": ["32px", {"lineHeight": "48px", "fontWeight": "700"}],
-                      "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
-                      "body-lg": ["18px", {"lineHeight": "32px", "fontWeight": "400"}],
-                      "headline-md": ["24px", {"lineHeight": "36px", "fontWeight": "500"}],
-                      "headline-lg-mobile": ["28px", {"lineHeight": "40px", "fontWeight": "700"}],
-                      "headline-xl": ["40px", {"lineHeight": "56px", "fontWeight": "700"}]
-              }
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              error: "#ba1a1a",
+              primary: "#000000",
+              "tertiary-fixed": "#d5e3fd",
+              "on-error-container": "#93000a",
+              "on-tertiary": "#ffffff",
+              tertiary: "#000000",
+              "tertiary-fixed-dim": "#b9c7e0",
+              surface: "#f7f9fb",
+              "surface-tint": "#565e74",
+              "on-secondary-container": "#006172",
+              "secondary-fixed": "#acedff",
+              "surface-container-lowest": "#ffffff",
+              "on-error": "#ffffff",
+              "tertiary-container": "#0d1c2f",
+              "on-tertiary-container": "#76859b",
+              "surface-container-highest": "#e0e3e5",
+              "outline-variant": "#c6c6cd",
+              background: "#f7f9fb",
+              "on-primary": "#ffffff",
+              "on-surface-variant": "#45464d",
+              "secondary-fixed-dim": "#4cd7f6",
+              "surface-variant": "#e0e3e5",
+              "on-primary-container": "#7c839b",
+              "on-secondary-fixed-variant": "#004e5c",
+              "inverse-primary": "#bec6e0",
+              outline: "#76777d",
+              "on-tertiary-fixed": "#0d1c2f",
+              "secondary-container": "#57dffe",
+              "on-primary-fixed": "#131b2e",
+              "on-background": "#191c1e",
+              "on-secondary-fixed": "#001f26",
+              "on-primary-fixed-variant": "#3f465c",
+              "on-secondary": "#ffffff",
+              "primary-fixed": "#dae2fd",
+              "on-surface": "#191c1e",
+              "primary-fixed-dim": "#bec6e0",
+              "surface-dim": "#d8dadc",
+              "surface-bright": "#f7f9fb",
+              "surface-container": "#eceef0",
+              "surface-container-low": "#f2f4f6",
+              "primary-container": "#131b2e",
+              "error-container": "#ffdad6",
+              secondary: "#00687a",
+              "surface-container-high": "#e6e8ea",
+              "inverse-on-surface": "#eff1f3",
+              "inverse-surface": "#2d3133",
+              "on-tertiary-fixed-variant": "#3a485c",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              gutter: "24px",
+              "margin-desktop": "48px",
+              "container-max": "1280px",
+              "stack-sm": "8px",
+              "stack-md": "16px",
+              "stack-lg": "32px",
+              "margin-mobile": "16px",
+            },
+            fontFamily: {
+              "body-md": ["IRANSans"],
+              "headline-lg": ["IRANSans"],
+              "label-md": ["IRANSans"],
+              "body-lg": ["IRANSans"],
+              "headline-md": ["IRANSans"],
+              "headline-lg-mobile": ["IRANSans"],
+              "headline-xl": ["IRANSans"],
+            },
+            fontSize: {
+              "body-md": ["16px", { lineHeight: "28px", fontWeight: "400" }],
+              "headline-lg": [
+                "32px",
+                { lineHeight: "48px", fontWeight: "700" },
+              ],
+              "label-md": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+              "body-lg": ["18px", { lineHeight: "32px", fontWeight: "400" }],
+              "headline-md": [
+                "24px",
+                { lineHeight: "36px", fontWeight: "500" },
+              ],
+              "headline-lg-mobile": [
+                "28px",
+                { lineHeight: "40px", fontWeight: "700" },
+              ],
+              "headline-xl": [
+                "40px",
+                { lineHeight: "56px", fontWeight: "700" },
+              ],
             },
           },
-        }
+        },
+      };
     </script>
-</head>
-<body class="bg-background text-on-background antialiased overflow-x-hidden">
-<!-- TopNavBar -->
-<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md shadow-sm">
-<nav class="flex flex-row-reverse justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
-<div class="flex items-center gap-4">
-<span class="font-headline-md text-headline-md font-bold text-primary">توسعه‌گران نوین</span>
-</div>
-<ul class="hidden md:flex flex-row-reverse gap-stack-lg items-center font-body-md text-body-md">
-<li class="text-secondary font-bold border-b-2 border-secondary pb-1">خانه</li>
-<li class="text-on-surface-variant hover:text-secondary transition-colors cursor-pointer">خدمات</li>
-<li class="text-on-surface-variant hover:text-secondary transition-colors cursor-pointer">درباره ما</li>
-<li class="text-on-surface-variant hover:text-secondary transition-colors cursor-pointer">تماس با ما</li>
-</ul>
-<div class="flex items-center gap-stack-md">
-<button class="material-symbols-outlined text-on-surface-variant hover:text-secondary transition-all">language</button>
-<button class="hidden md:block bg-secondary text-on-secondary px-6 py-2 rounded-lg font-label-md transition-transform active:scale-95">درخواست پروژه</button>
-<button class="md:hidden material-symbols-outlined">menu</button>
-</div>
-</nav>
-</header>
-<main class="pt-24">
-<!-- Hero Section -->
-<section class="relative min-h-[819px] flex items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg items-center w-full">
-<div class="order-2 md:order-1 space-y-stack-md text-right">
-<h1 class="font-headline-xl text-headline-xl text-primary leading-tight">توسعه پروژه‌های نرم‌افزاری شما با بالاترین کیفیت</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">تخصص ما طراحی سایت‌های فروشگاهی، شرکتی و پشتیبانی فنی است. ما ایده‌های شما را به واقعیت‌های دیجیتال تبدیل می‌کنیم.</p>
-<div class="pt-stack-md flex flex-col sm:flex-row-reverse gap-4">
-<button class="bg-secondary text-on-secondary px-8 py-4 rounded-xl font-headline-md shadow-lg hover:shadow-xl transition-all active:scale-95">دریافت مشاوره رایگان</button>
-<button class="border-2 border-primary text-primary px-8 py-4 rounded-xl font-headline-md hover:bg-primary/5 transition-all">مشاهده نمونه کارها</button>
-</div>
-</div>
-<div class="order-1 md:order-2 relative aspect-square md:aspect-video rounded-3xl overflow-hidden shadow-2xl">
-<img class="w-full h-full object-cover" data-alt="A futuristic software development office with high-tech screens and clean minimalist lines. The scene features glowing blue cyan accents against a deep navy and white background, symbolizing technical authority and precision. Several professional software engineers are collaborating in a bright, modern light-mode environment. The mood is highly professional, sophisticated, and innovative." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc6nWIwETZuQgroBjzw6QFiTVW0Zh07n8B4RFYWDGXotkVLevUhV3k3Quhc0Ffgx2UUWHgxbY4fGMf-ISWE_akEImfuxRNqIuiBJXlP-I8_t74YwyvJl2gcD-YJ5PjQM3SuaiklSt_4ie7r0S4PesiQyTTOhPlwdX4y6dEsIEh9yRVlcmDDuNy024M32xqKyIyF6cbV1S5P9Tp0H4a-gzMtiYtr8I80GyXbQLQ3qy6c_2xDHSQVU4n"/>
-<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent"></div>
-</div>
-</div>
-</section>
-<!-- Services Overview (Bento Grid) -->
-<section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-<div class="text-center mb-16 space-y-2">
-<h2 class="font-headline-lg text-headline-lg text-primary">خدمات تخصصی ما</h2>
-<div class="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[240px]">
-<!-- Large Feature -->
-<div class="md:col-span-8 md:row-span-2 bg-surface-container-low rounded-3xl p-8 flex flex-col justify-between hover:shadow-lg transition-shadow border border-outline-variant/30 overflow-hidden relative group">
-<div class="z-10">
-<span class="material-symbols-outlined text-secondary text-5xl mb-4" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
-<h3 class="font-headline-md text-headline-md text-primary mb-2">طراحی فروشگاه‌های آنلاین</h3>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-md">ایجاد پلتفرم‌های فروش قدرتمند با رابط کاربری اختصاصی، درگاه‌های پرداخت امن و مدیریت هوشمند محصولات برای رشد کسب‌وکار شما.</p>
-</div>
-<div class="absolute -bottom-10 -left-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl group-hover:bg-secondary/20 transition-all"></div>
-<div class="z-10">
-<button class="text-secondary font-bold flex items-center gap-2">مشاهده جزئیات <span class="material-symbols-outlined">arrow_back</span></button>
-</div>
-</div>
-<!-- Small Feature 1 -->
-<div class="md:col-span-4 bg-surface-container-high rounded-3xl p-8 flex flex-col justify-between hover:-translate-y-1 transition-all">
-<div>
-<span class="material-symbols-outlined text-secondary text-4xl mb-4">business</span>
-<h3 class="font-headline-md text-headline-md text-primary">سایت‌های شرکتی</h3>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant">نمایش اعتبار و هویت برند شما در دنیای دیجیتال با طراحی‌های مدرن و مینیمال.</p>
-</div>
-<!-- Small Feature 2 -->
-<div class="md:col-span-4 bg-primary text-on-primary rounded-3xl p-8 flex flex-col justify-between hover:-translate-y-1 transition-all shadow-xl">
-<div>
-<span class="material-symbols-outlined text-secondary-fixed text-4xl mb-4">support_agent</span>
-<h3 class="font-headline-md text-headline-md">پشتیبانی فنی ۲۴/۷</h3>
-</div>
-<p class="font-body-md text-body-md opacity-80">تیم متخصص ما همواره در کنار شماست تا پایداری و امنیت سیستم‌هایتان را تضمین کند.</p>
-</div>
-</div>
-</section>
-<!-- Why Choose Us (Asymmetric Layout) -->
-<section class="py-24 bg-surface-container-low">
-<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-<div class="space-y-stack-lg">
-<h2 class="font-headline-lg text-headline-lg text-primary">چرا توسعه‌گران نوین؟</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant">ما معتقدیم که هر خط کد باید ارزش افزوده‌ای برای بیزنس شما ایجاد کند. تعهد ما به کیفیت، فراتر از یک شعار تبلیغاتی است.</p>
-<ul class="space-y-6">
-<li class="flex items-start gap-4">
-<span class="material-symbols-outlined text-secondary bg-secondary/10 p-2 rounded-lg">verified</span>
-<div>
-<h4 class="font-headline-md text-[20px] text-primary">استانداردهای جهانی کدنویسی</h4>
-<p class="font-body-md text-body-md text-on-surface-variant">استفاده از جدیدترین متدولوژی‌ها و فریم‌ورک‌های روز دنیا.</p>
-</div>
-</li>
-<li class="flex items-start gap-4">
-<span class="material-symbols-outlined text-secondary bg-secondary/10 p-2 rounded-lg">speed</span>
-<div>
-<h4 class="font-headline-md text-[20px] text-primary">عملکرد و سرعت بی‌نظیر</h4>
-<p class="font-body-md text-body-md text-on-surface-variant">بهینه‌سازی حداکثری برای تجربه کاربری روان و سئوی عالی.</p>
-</div>
-</li>
-<li class="flex items-start gap-4">
-<span class="material-symbols-outlined text-secondary bg-secondary/10 p-2 rounded-lg">security</span>
-<div>
-<h4 class="font-headline-md text-[20px] text-primary">امنیت چندلایه</h4>
-<p class="font-body-md text-body-md text-on-surface-variant">حفاظت از داده‌ها و زیرساخت‌های شما در برابر تمامی تهدیدات.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="relative">
-<div class="grid grid-cols-2 gap-4">
-<div class="space-y-4 pt-12">
-<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/20">
-<div class="text-secondary font-headline-xl text-headline-xl">+۵۰</div>
-<div class="text-on-surface-variant font-label-md">پروژه موفق</div>
-</div>
-<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/20">
-<div class="text-secondary font-headline-xl text-headline-xl">+۹۸٪</div>
-<div class="text-on-surface-variant font-label-md">رضایت مشتریان</div>
-</div>
-</div>
-<div class="space-y-4">
-<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/20">
-<div class="text-secondary font-headline-xl text-headline-xl">+۱۰</div>
-<div class="text-on-surface-variant font-label-md">سال تجربه</div>
-</div>
-<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/20">
-<div class="text-secondary font-headline-xl text-headline-xl">۲۴/۷</div>
-<div class="text-on-surface-variant font-label-md">پشتیبانی فعال</div>
-</div>
-</div>
-</div>
-<div class="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-secondary/5 rounded-full blur-3xl"></div>
-</div>
-</div>
-</section>
-<!-- Testimonials -->
-<section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-<div class="text-center mb-16">
-<h2 class="font-headline-lg text-headline-lg text-primary">نظرات مشتریان ما</h2>
-</div>
-<div class="flex flex-col md:flex-row gap-gutter overflow-x-auto pb-8 scrollbar-hide">
-<!-- Testimonial 1 -->
-<div class="min-w-[320px] md:min-w-[400px] bg-surface-container-lowest p-8 rounded-3xl shadow-sm border border-outline-variant/10 relative">
-<span class="material-symbols-outlined text-secondary/20 text-7xl absolute top-4 left-4">format_quote</span>
-<p class="font-body-md text-body-md text-on-surface-variant mb-8 relative z-10 italic">"همکاری با تیم توسعه‌گران نوین یکی از بهترین تجربه‌های کاری ما بود. سرعت عمل و دقت آن‌ها در پیاده‌سازی فروشگاه آنلاین ما فراتر از انتظار بود."</p>
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center font-bold text-on-secondary-fixed">ع.ر</div>
-<div>
-<div class="font-headline-md text-[16px] text-primary">علیرضا رضایی</div>
-<div class="text-label-md text-on-surface-variant">مدیرعامل شرکت پارت‌دیجیتال</div>
-</div>
-</div>
-</div>
-<!-- Testimonial 2 -->
-<div class="min-w-[320px] md:min-w-[400px] bg-surface-container-lowest p-8 rounded-3xl shadow-sm border border-outline-variant/10 relative">
-<span class="material-symbols-outlined text-secondary/20 text-7xl absolute top-4 left-4">format_quote</span>
-<p class="font-body-md text-body-md text-on-surface-variant mb-8 relative z-10 italic">"خدمات پشتیبانی فنی این تیم واقعا بی‌نظیر است. هر زمان که به مشکلی برخوردیم، در کوتاه‌ترین زمان ممکن پاسخگو بودند."</p>
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center font-bold text-on-secondary-fixed">س.م</div>
-<div>
-<div class="font-headline-md text-[16px] text-primary">سارا محمدی</div>
-<div class="text-label-md text-on-surface-variant">مدیر فنی استارتاپ تپ‌فود</div>
-</div>
-</div>
-</div>
-<!-- Testimonial 3 -->
-<div class="min-w-[320px] md:min-w-[400px] bg-surface-container-lowest p-8 rounded-3xl shadow-sm border border-outline-variant/10 relative">
-<span class="material-symbols-outlined text-secondary/20 text-7xl absolute top-4 left-4">format_quote</span>
-<p class="font-body-md text-body-md text-on-surface-variant mb-8 relative z-10 italic">"طراحی سایت شرکتی ما توسط این تیم انجام شد و از نظر سئو و سرعت لود، نتایج خیره‌کننده‌ای گرفتیم. قطعا دوباره با آن‌ها همکاری خواهیم کرد."</p>
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center font-bold text-on-secondary-fixed">م.ا</div>
-<div>
-<div class="font-headline-md text-[16px] text-primary">مهدی احمدی</div>
-<div class="text-label-md text-on-surface-variant">بنیان‌گذار هولدینگ پارس</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- CTA Section -->
-<section class="py-24 px-margin-mobile">
-<div class="max-w-4xl mx-auto bg-primary rounded-[40px] p-12 text-center text-on-primary shadow-2xl relative overflow-hidden">
-<div class="absolute top-0 right-0 w-64 h-64 bg-secondary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-<h2 class="font-headline-xl text-headline-xl mb-6 relative z-10">آماده شروع پروژه جدیدتان هستید؟</h2>
-<p class="font-body-lg text-body-lg opacity-80 mb-10 max-w-2xl mx-auto relative z-10">ما آماده‌ایم تا با مشاوره رایگان، بهترین مسیر برای دیجیتالی کردن کسب‌وکار شما را ترسیم کنیم.</p>
-<button class="bg-secondary text-on-secondary px-10 py-5 rounded-2xl font-headline-md hover:scale-105 transition-transform relative z-10 shadow-lg">دریافت مشاوره رایگان همین حالا</button>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="w-full border-t border-outline-variant bg-surface-container-low dark:bg-surface-container-highest">
-<div class="flex flex-col md:flex-row-reverse justify-between items-center px-margin-mobile md:px-margin-desktop py-stack-lg max-w-container-max mx-auto gap-stack-md">
-<div class="flex flex-col items-center md:items-end gap-2">
-<span class="font-headline-md text-headline-md text-primary">توسعه‌گران نوین</span>
-<p class="font-body-md text-body-md text-on-surface-variant">پیشرو در ارائه راهکارهای نرم‌افزاری هوشمند</p>
-</div>
-<div class="flex flex-wrap justify-center gap-6 font-body-md text-body-md text-on-surface-variant">
-<a class="hover:text-secondary transition-colors" href="#">شرایط استفاده</a>
-<a class="hover:text-secondary transition-colors" href="#">حریم خصوصی</a>
-<a class="hover:text-secondary transition-colors" href="#">سوالات متداول</a>
-<a class="hover:text-secondary transition-colors" href="#">فرصت‌های شغلی</a>
-</div>
-<div class="text-on-surface-variant font-body-md text-body-md">
-                © ۱۴۰۲ تمامی حقوق برای توسعه‌گران نوین محفوظ است.
+  </head>
+  <body class="bg-background text-on-background antialiased overflow-x-hidden">
+    <!-- TopNavBar -->
+    <header
+      class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md shadow-sm"
+    >
+      <nav
+        class="flex flex-row-reverse justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto"
+      >
+        <div class="flex items-center gap-4">
+          <span class="font-headline-md text-headline-md font-bold text-primary"
+            >توسعه‌گران نوین</span
+          >
+        </div>
+        <ul
+          class="hidden md:flex flex-row-reverse gap-stack-lg items-center font-body-md text-body-md"
+        >
+          <li class="text-secondary font-bold border-b-2 border-secondary pb-1">
+            خانه
+          </li>
+          <li
+            class="text-on-surface-variant hover:text-secondary transition-colors cursor-pointer"
+          >
+            خدمات
+          </li>
+          <li
+            class="text-on-surface-variant hover:text-secondary transition-colors cursor-pointer"
+          >
+            درباره ما
+          </li>
+          <li
+            class="text-on-surface-variant hover:text-secondary transition-colors cursor-pointer"
+          >
+            تماس با ما
+          </li>
+        </ul>
+        <div class="flex items-center gap-stack-md">
+          <button
+            class="material-symbols-outlined text-on-surface-variant hover:text-secondary transition-all"
+          >
+            language
+          </button>
+          <button
+            class="hidden md:block bg-secondary text-on-secondary px-6 py-2 rounded-lg font-label-md transition-transform active:scale-95"
+          >
+            درخواست پروژه
+          </button>
+          <button class="md:hidden material-symbols-outlined">menu</button>
+        </div>
+      </nav>
+    </header>
+    <main class="pt-24">
+      <!-- Hero Section -->
+      <section
+        class="relative min-h-[819px] flex items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto"
+      >
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg items-center w-full"
+        >
+          <div class="order-2 md:order-1 space-y-stack-md text-right">
+            <h1
+              class="font-headline-xl text-headline-xl text-primary leading-tight"
+            >
+              توسعه پروژه‌های نرم‌افزاری شما با بالاترین کیفیت
+            </h1>
+            <p
+              class="font-body-lg text-body-lg text-on-surface-variant max-w-xl"
+            >
+              تخصص ما طراحی سایت‌های فروشگاهی، شرکتی و پشتیبانی فنی است. ما
+              ایده‌های شما را به واقعیت‌های دیجیتال تبدیل می‌کنیم.
+            </p>
+            <div class="pt-stack-md flex flex-col sm:flex-row-reverse gap-4">
+              <button
+                class="bg-secondary text-on-secondary px-8 py-4 rounded-xl font-headline-md shadow-lg hover:shadow-xl transition-all active:scale-95"
+              >
+                دریافت مشاوره رایگان
+              </button>
+              <button
+                class="border-2 border-primary text-primary px-8 py-4 rounded-xl font-headline-md hover:bg-primary/5 transition-all"
+              >
+                مشاهده نمونه کارها
+              </button>
             </div>
-</div>
-</footer>
-<script>
-        // Micro-interactions and subtle scroll animations
-        document.addEventListener('DOMContentLoaded', () => {
-            const observerOptions = {
-                threshold: 0.1
-            };
+          </div>
+          <div
+            class="order-1 md:order-2 relative aspect-square md:aspect-video rounded-3xl overflow-hidden shadow-2xl"
+          >
+            <img
+              class="w-full h-full object-cover"
+              data-alt="A futuristic software development office with high-tech screens and clean minimalist lines. The scene features glowing blue cyan accents against a deep navy and white background, symbolizing technical authority and precision. Several professional software engineers are collaborating in a bright, modern light-mode environment. The mood is highly professional, sophisticated, and innovative."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc6nWIwETZuQgroBjzw6QFiTVW0Zh07n8B4RFYWDGXotkVLevUhV3k3Quhc0Ffgx2UUWHgxbY4fGMf-ISWE_akEImfuxRNqIuiBJXlP-I8_t74YwyvJl2gcD-YJ5PjQM3SuaiklSt_4ie7r0S4PesiQyTTOhPlwdX4y6dEsIEh9yRVlcmDDuNy024M32xqKyIyF6cbV1S5P9Tp0H4a-gzMtiYtr8I80GyXbQLQ3qy6c_2xDHSQVU4n"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent"
+            ></div>
+          </div>
+        </div>
+      </section>
+      <!-- Services Overview (Bento Grid) -->
+      <section
+        class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto"
+      >
+        <div class="text-center mb-16 space-y-2">
+          <h2 class="font-headline-lg text-headline-lg text-primary">
+            خدمات تخصصی ما
+          </h2>
+          <div class="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[240px]">
+          <!-- Large Feature -->
+          <div
+            class="md:col-span-8 md:row-span-2 bg-surface-container-low rounded-3xl p-8 flex flex-col justify-between hover:shadow-lg transition-shadow border border-outline-variant/30 overflow-hidden relative group"
+          >
+            <div class="z-10">
+              <span
+                class="material-symbols-outlined text-secondary text-5xl mb-4"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >shopping_cart</span
+              >
+              <h3 class="font-headline-md text-headline-md text-primary mb-2">
+                طراحی فروشگاه‌های آنلاین
+              </h3>
+              <p
+                class="font-body-md text-body-md text-on-surface-variant max-w-md"
+              >
+                ایجاد پلتفرم‌های فروش قدرتمند با رابط کاربری اختصاصی، درگاه‌های
+                پرداخت امن و مدیریت هوشمند محصولات برای رشد کسب‌وکار شما.
+              </p>
+            </div>
+            <div
+              class="absolute -bottom-10 -left-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl group-hover:bg-secondary/20 transition-all"
+            ></div>
+            <div class="z-10">
+              <button class="text-secondary font-bold flex items-center gap-2">
+                مشاهده جزئیات
+                <span class="material-symbols-outlined">arrow_back</span>
+              </button>
+            </div>
+          </div>
+          <!-- Small Feature 1 -->
+          <div
+            class="md:col-span-4 bg-surface-container-high rounded-3xl p-8 flex flex-col justify-between hover:-translate-y-1 transition-all"
+          >
+            <div>
+              <span
+                class="material-symbols-outlined text-secondary text-4xl mb-4"
+                >business</span
+              >
+              <h3 class="font-headline-md text-headline-md text-primary">
+                سایت‌های شرکتی
+              </h3>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              نمایش اعتبار و هویت برند شما در دنیای دیجیتال با طراحی‌های مدرن و
+              مینیمال.
+            </p>
+          </div>
+          <!-- Small Feature 2 -->
+          <div
+            class="md:col-span-4 bg-primary text-on-primary rounded-3xl p-8 flex flex-col justify-between hover:-translate-y-1 transition-all shadow-xl"
+          >
+            <div>
+              <span
+                class="material-symbols-outlined text-secondary-fixed text-4xl mb-4"
+                >support_agent</span
+              >
+              <h3 class="font-headline-md text-headline-md">
+                پشتیبانی فنی ۲۴/۷
+              </h3>
+            </div>
+            <p class="font-body-md text-body-md opacity-80">
+              تیم متخصص ما همواره در کنار شماست تا پایداری و امنیت سیستم‌هایتان
+              را تضمین کند.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Why Choose Us (Asymmetric Layout) -->
+      <section class="py-24 bg-surface-container-low">
+        <div
+          class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+        >
+          <div class="space-y-stack-lg">
+            <h2 class="font-headline-lg text-headline-lg text-primary">
+              چرا توسعه‌گران نوین؟
+            </h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant">
+              ما معتقدیم که هر خط کد باید ارزش افزوده‌ای برای بیزنس شما ایجاد
+              کند. تعهد ما به کیفیت، فراتر از یک شعار تبلیغاتی است.
+            </p>
+            <ul class="space-y-6">
+              <li class="flex items-start gap-4">
+                <span
+                  class="material-symbols-outlined text-secondary bg-secondary/10 p-2 rounded-lg"
+                  >verified</span
+                >
+                <div>
+                  <h4 class="font-headline-md text-[20px] text-primary">
+                    استانداردهای جهانی کدنویسی
+                  </h4>
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    استفاده از جدیدترین متدولوژی‌ها و فریم‌ورک‌های روز دنیا.
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <span
+                  class="material-symbols-outlined text-secondary bg-secondary/10 p-2 rounded-lg"
+                  >speed</span
+                >
+                <div>
+                  <h4 class="font-headline-md text-[20px] text-primary">
+                    عملکرد و سرعت بی‌نظیر
+                  </h4>
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    بهینه‌سازی حداکثری برای تجربه کاربری روان و سئوی عالی.
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <span
+                  class="material-symbols-outlined text-secondary bg-secondary/10 p-2 rounded-lg"
+                  >security</span
+                >
+                <div>
+                  <h4 class="font-headline-md text-[20px] text-primary">
+                    امنیت چندلایه
+                  </h4>
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    حفاظت از داده‌ها و زیرساخت‌های شما در برابر تمامی تهدیدات.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="relative">
+            <div class="grid grid-cols-2 gap-4">
+              <div class="space-y-4 pt-12">
+                <div
+                  class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/20"
+                >
+                  <div class="text-secondary font-headline-xl text-headline-xl">
+                    +۵۰
+                  </div>
+                  <div class="text-on-surface-variant font-label-md">
+                    پروژه موفق
+                  </div>
+                </div>
+                <div
+                  class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/20"
+                >
+                  <div class="text-secondary font-headline-xl text-headline-xl">
+                    +۹۸٪
+                  </div>
+                  <div class="text-on-surface-variant font-label-md">
+                    رضایت مشتریان
+                  </div>
+                </div>
+              </div>
+              <div class="space-y-4">
+                <div
+                  class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/20"
+                >
+                  <div class="text-secondary font-headline-xl text-headline-xl">
+                    +۱۰
+                  </div>
+                  <div class="text-on-surface-variant font-label-md">
+                    سال تجربه
+                  </div>
+                </div>
+                <div
+                  class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/20"
+                >
+                  <div class="text-secondary font-headline-xl text-headline-xl">
+                    ۲۴/۷
+                  </div>
+                  <div class="text-on-surface-variant font-label-md">
+                    پشتیبانی فعال
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-secondary/5 rounded-full blur-3xl"
+            ></div>
+          </div>
+        </div>
+      </section>
+      <!-- Testimonials -->
+      <section
+        class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto"
+      >
+        <div class="text-center mb-16">
+          <h2 class="font-headline-lg text-headline-lg text-primary">
+            نظرات مشتریان ما
+          </h2>
+        </div>
+        <div
+          class="flex flex-col md:flex-row gap-gutter overflow-x-auto pb-8 scrollbar-hide"
+        >
+          <!-- Testimonial 1 -->
+          <div
+            class="min-w-[320px] md:min-w-[400px] bg-surface-container-lowest p-8 rounded-3xl shadow-sm border border-outline-variant/10 relative"
+          >
+            <span
+              class="material-symbols-outlined text-secondary/20 text-7xl absolute top-4 left-4"
+              >format_quote</span
+            >
+            <p
+              class="font-body-md text-body-md text-on-surface-variant mb-8 relative z-10 italic"
+            >
+              "همکاری با تیم توسعه‌گران نوین یکی از بهترین تجربه‌های کاری ما
+              بود. سرعت عمل و دقت آن‌ها در پیاده‌سازی فروشگاه آنلاین ما فراتر از
+              انتظار بود."
+            </p>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center font-bold text-on-secondary-fixed"
+              >
+                ع.ر
+              </div>
+              <div>
+                <div class="font-headline-md text-[16px] text-primary">
+                  علیرضا رضایی
+                </div>
+                <div class="text-label-md text-on-surface-variant">
+                  مدیرعامل شرکت پارت‌دیجیتال
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 2 -->
+          <div
+            class="min-w-[320px] md:min-w-[400px] bg-surface-container-lowest p-8 rounded-3xl shadow-sm border border-outline-variant/10 relative"
+          >
+            <span
+              class="material-symbols-outlined text-secondary/20 text-7xl absolute top-4 left-4"
+              >format_quote</span
+            >
+            <p
+              class="font-body-md text-body-md text-on-surface-variant mb-8 relative z-10 italic"
+            >
+              "خدمات پشتیبانی فنی این تیم واقعا بی‌نظیر است. هر زمان که به مشکلی
+              برخوردیم، در کوتاه‌ترین زمان ممکن پاسخگو بودند."
+            </p>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center font-bold text-on-secondary-fixed"
+              >
+                س.م
+              </div>
+              <div>
+                <div class="font-headline-md text-[16px] text-primary">
+                  سارا محمدی
+                </div>
+                <div class="text-label-md text-on-surface-variant">
+                  مدیر فنی استارتاپ تپ‌فود
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 3 -->
+          <div
+            class="min-w-[320px] md:min-w-[400px] bg-surface-container-lowest p-8 rounded-3xl shadow-sm border border-outline-variant/10 relative"
+          >
+            <span
+              class="material-symbols-outlined text-secondary/20 text-7xl absolute top-4 left-4"
+              >format_quote</span
+            >
+            <p
+              class="font-body-md text-body-md text-on-surface-variant mb-8 relative z-10 italic"
+            >
+              "طراحی سایت شرکتی ما توسط این تیم انجام شد و از نظر سئو و سرعت
+              لود، نتایج خیره‌کننده‌ای گرفتیم. قطعا دوباره با آن‌ها همکاری
+              خواهیم کرد."
+            </p>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center font-bold text-on-secondary-fixed"
+              >
+                م.ا
+              </div>
+              <div>
+                <div class="font-headline-md text-[16px] text-primary">
+                  مهدی احمدی
+                </div>
+                <div class="text-label-md text-on-surface-variant">
+                  بنیان‌گذار هولدینگ پارس
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- CTA Section -->
+      <section class="py-24 px-margin-mobile">
+        <div
+          class="max-w-4xl mx-auto bg-primary rounded-[40px] p-12 text-center text-on-primary shadow-2xl relative overflow-hidden"
+        >
+          <div
+            class="absolute top-0 right-0 w-64 h-64 bg-secondary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"
+          ></div>
+          <h2 class="font-headline-xl text-headline-xl mb-6 relative z-10">
+            آماده شروع پروژه جدیدتان هستید؟
+          </h2>
+          <p
+            class="font-body-lg text-body-lg opacity-80 mb-10 max-w-2xl mx-auto relative z-10"
+          >
+            ما آماده‌ایم تا با مشاوره رایگان، بهترین مسیر برای دیجیتالی کردن
+            کسب‌وکار شما را ترسیم کنیم.
+          </p>
+          <button
+            class="bg-secondary text-on-secondary px-10 py-5 rounded-2xl font-headline-md hover:scale-105 transition-transform relative z-10 shadow-lg"
+          >
+            دریافت مشاوره رایگان همین حالا
+          </button>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="w-full border-t border-outline-variant bg-surface-container-low dark:bg-surface-container-highest"
+    >
+      <div
+        class="flex flex-col md:flex-row-reverse justify-between items-center px-margin-mobile md:px-margin-desktop py-stack-lg max-w-container-max mx-auto gap-stack-md"
+      >
+        <div class="flex flex-col items-center md:items-end gap-2">
+          <span class="font-headline-md text-headline-md text-primary"
+            >توسعه‌گران نوین</span
+          >
+          <p class="font-body-md text-body-md text-on-surface-variant">
+            پیشرو در ارائه راهکارهای نرم‌افزاری هوشمند
+          </p>
+        </div>
+        <div
+          class="flex flex-wrap justify-center gap-6 font-body-md text-body-md text-on-surface-variant"
+        >
+          <a class="hover:text-secondary transition-colors" href="#"
+            >شرایط استفاده</a
+          >
+          <a class="hover:text-secondary transition-colors" href="#"
+            >حریم خصوصی</a
+          >
+          <a class="hover:text-secondary transition-colors" href="#"
+            >سوالات متداول</a
+          >
+          <a class="hover:text-secondary transition-colors" href="#"
+            >فرصت‌های شغلی</a
+          >
+        </div>
+        <div class="text-on-surface-variant font-body-md text-body-md">
+          © ۱۴۰۲ تمامی حقوق برای توسعه‌گران نوین محفوظ است.
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Micro-interactions and subtle scroll animations
+      document.addEventListener("DOMContentLoaded", () => {
+        const observerOptions = {
+          threshold: 0.1,
+        };
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('opacity-100', 'translate-y-0');
-                        entry.target.classList.remove('opacity-0', 'translate-y-10');
-                    }
-                });
-            }, observerOptions);
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("opacity-100", "translate-y-0");
+              entry.target.classList.remove("opacity-0", "translate-y-10");
+            }
+          });
+        }, observerOptions);
 
-            // Add basic fade-in animation classes to sections
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
-                observer.observe(section);
-            });
-
-            // Smooth parallax effect for hero image
-            window.addEventListener('scroll', () => {
-                const scrolled = window.pageYOffset;
-                const heroImg = document.querySelector('main section img');
-                if(heroImg) {
-                    heroImg.style.transform = `translateY(${scrolled * 0.1}px)`;
-                }
-            });
+        // Add basic fade-in animation classes to sections
+        const sections = document.querySelectorAll("section");
+        sections.forEach((section) => {
+          section.classList.add(
+            "transition-all",
+            "duration-700",
+            "opacity-0",
+            "translate-y-10",
+          );
+          observer.observe(section);
         });
+
+        // Smooth parallax effect for hero image
+        window.addEventListener("scroll", () => {
+          const scrolled = window.pageYOffset;
+          const heroImg = document.querySelector("main section img");
+          if (heroImg) {
+            heroImg.style.transform = `translateY(${scrolled * 0.1}px)`;
+          }
+        });
+      });
     </script>
-</body></html>
+  </body>
+</html>

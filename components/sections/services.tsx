@@ -1,29 +1,53 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { Code2, Smartphone, Bot } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { type Locale } from '@/lib/i18n/locales';
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { Code2, Smartphone, Bot } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { type Locale } from "@/lib/i18n/locales";
 
-export function ServicesSection({ content, locale }: { content: { eyebrow: string; title: string; intro: string; items: Array<{ title: string; summary: string; details: string }> }; locale: Locale; }) {
+export function ServicesSection({
+  content,
+  locale,
+}: {
+  content: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    items: Array<{ title: string; summary: string; details: string }>;
+  };
+  locale: Locale;
+}) {
   const icons = [Code2, Smartphone, Bot];
 
   return (
-    <section id="services" className="relative mx-auto w-full max-w-7xl px-6 py-24 z-10 bg-black">
+    <section
+      id="services"
+      className="relative mx-auto w-full   px-6 py-24 z-10 bg-main "
+    >
       <div className="max-w-3xl space-y-6">
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-neutral-400">
+        <span className="inline-flex w-fit items-center gap-2 rounded-lg border border-white/10  backdrop-blur-md px-4 py-1.5 text-xs font-medium tracking-wider text-[#7779cd]">
           {content.eyebrow}
         </span>
-        <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">{content.title}</h2>
-        <p className="text-lg leading-relaxed text-neutral-400 font-light">{content.intro}</p>
+        <h2 className="text-4xl tracking-tight text-white sm:text-5xl">
+          {content.title}
+        </h2>
+        <p className="text-sm leading-relaxed text-neutral-400 font-light">
+          {content.intro}
+        </p>
       </div>
       <div className="mt-16 grid gap-6 md:grid-cols-3">
         {content.items.map((item, index) => {
           const Icon = icons[index % icons.length];
           return (
-            <motion.div 
+            <motion.div
               key={item.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -38,12 +62,22 @@ export function ServicesSection({ content, locale }: { content: { eyebrow: strin
                   <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white">
                     <Icon size={24} strokeWidth={1.5} />
                   </div>
-                  <CardTitle className="text-xl font-medium text-white">{item.title}</CardTitle>
-                  <CardDescription className="text-neutral-400 mt-2 font-light">{item.summary}</CardDescription>
+                  <CardTitle className="text-xl font-medium text-white">
+                    {item.title}
+                  </CardTitle>
+                  <CardDescription className="text-neutral-400 mt-2 font-light">
+                    {item.summary}
+                  </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6 relative z-10">
-                  <p className="text-sm leading-relaxed text-neutral-500">{item.details}</p>
-                  <Button asChild variant="ghost" className="px-0 text-white hover:text-neutral-300 hover:bg-transparent font-medium">
+                  <p className="text-sm leading-relaxed text-neutral-500">
+                    {item.details}
+                  </p>
+                  <Button
+                    asChild
+                    variant="ghost"
+                    className="px-0 text-white hover:text-neutral-300 hover:bg-transparent font-medium"
+                  >
                     <Link href={`/${locale}/contact`}>مشاوره پروژه &larr;</Link>
                   </Button>
                 </CardContent>

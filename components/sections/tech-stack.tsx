@@ -1,18 +1,34 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
-export function TechStackSection({ content }: { content: { eyebrow: string; title: string; description: string; items: string[] } }) {
+export function TechStackSection({
+  content,
+}: {
+  content: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    items: string[];
+  };
+}) {
   return (
-    <section id="tech-stack" className="mx-auto w-full max-w-7xl px-6 py-24 z-10 relative bg-black">
+    <section
+      id="tech-stack"
+      className="mx-auto w-full   px-6 py-24 z-10 relative bg-main "
+    >
       <div className="flex flex-col items-center text-center max-w-3xl mx-auto space-y-6">
         <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-neutral-400">
           {content.eyebrow}
         </span>
-        <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">{content.title}</h2>
-        <p className="text-lg leading-relaxed text-neutral-400 font-light">{content.description}</p>
+        <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+          {content.title}
+        </h2>
+        <p className="text-lg leading-relaxed text-neutral-400 font-light">
+          {content.description}
+        </p>
       </div>
-      
+
       <div className="mt-16 flex flex-wrap justify-center gap-4">
         {content.items.map((tech, index) => (
           <motion.div
