@@ -74,43 +74,43 @@ export function HeroSection({
             <Image
               src={"/node.svg"}
               className="border rounded-xl py-3 px-2"
-              width={50}
-              height={50}
+              width={55}
+              height={40}
               alt="nodejs"
             />
             <Image
               src={"/reac.svg"}
               className="border rounded-xl py-2 px-1"
-              width={50}
-              height={50}
+              width={55}
+              height={40}
               alt="react"
             />
             <Image
               src={"/net.svg"}
               className="border rounded-xl py-2 px-1"
-              width={50}
-              height={50}
+              width={55}
+              height={40}
               alt="net"
             />
             <Image
               src={"/next.svg"}
               className="border rounded-xl py-2 px-1"
-              width={50}
-              height={50}
+              width={55}
+              height={40}
               alt="docker"
             />
             <Image
               src={"/tailwind.svg"}
               className="border rounded-xl py-2 px-1"
-              width={50}
-              height={50}
+              width={55}
+              height={40}
               alt="tailwind"
             />
             <Image
               src={"/ts.svg"}
               className="border rounded-xl py-2 px-1"
-              width={50}
-              height={50}
+              width={55}
+              height={40}
               alt="ts"
             />
           </div>

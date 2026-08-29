@@ -1,46 +1,64 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Link } from "lucide-react";
+import { Button } from "../ui/button";
+import { Locale } from "@/lib/i18n/locales";
 
 export function WhyChooseUsSection({
   content,
+  locale,
 }: {
-  content: { eyebrow: string; title: string; points: string[] };
+  content: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    primaryCta: { label: string; href: string };
+    secondaryCta: { label: string; href: string };
+    points: string[];
+  };
+  locale: Locale;
 }) {
   return (
     <section
       id="why-us"
-      className="mx-auto w-full   px-6 py-24 z-10 relative bg-main "
+      className="mx-auto w-full px-6 py-24 z-10 relative bg-main  ideh-back"
     >
-      <div className="space-y-8 rounded-[3rem] border border-white/5 bg-white/[0.01] p-10 lg:p-16 relative overflow-hidden">
+      <div className="space-y-8 rounded-2xl    bg-white/[0.01] p-5 lg:p-18 relative overflow-hidden">
         <div className="relative z-10">
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-neutral-400">
+          <span className="inline-flex w-fit items-center gap-2 rounded-lg border border-white/10  backdrop-blur-md px-2 text-sm font-medium tracking-wider text-[#7779cd]">
+            <img src="/h-icon.png" className="w-10 h-10" alt="" />
             {content.eyebrow}
           </span>
-          <h2 className="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+          <h2 className="mt-6 text-3xl font-bold tracking-tight text-white ">
             {content.title}
-          </h2>
+          </h2>{" "}
+          <p className="text-md mt-3 leading-relaxed text-neutral-400 font-light">
+            {content.intro}
+          </p>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {content.points.map((point, index) => (
-              <motion.div
-                key={point}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex items-start gap-4 rounded-2xl border border-white/5 bg-white/[0.02] p-6 transition-colors hover:bg-white/5"
+            <div className="flex flex-wrap gap-4 mt-2">
+              <Button
+                asChild
+                size="lg"
+                className="rounded-xl border-[#020319] gradiant text-white px-8 transition-all hover:scale-105"
               >
-                <CheckCircle2
-                  className="text-neutral-500 shrink-0 mt-0.5"
-                  size={24}
-                  strokeWidth={1.5}
-                />
-                <p className="text-base leading-relaxed text-neutral-400 font-light">
-                  {point}
-                </p>
-              </motion.div>
-            ))}
+                <Link href={`/${locale}${content.primaryCta.href}`}>
+                  {content.primaryCta.label}
+                  <ArrowRight />
+                </Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="rounded-xl border-white/10 bg-transparent hover:bg-white/5 text-white px-8 transition-all hover:scale-105"
+              >
+                <Link href={`/${locale}${content.secondaryCta.href}`}>
+                  {content.secondaryCta.label}
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </div>

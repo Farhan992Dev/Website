@@ -51,12 +51,12 @@ body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
   font-family: var(--app-font);
-  background: #020319;
-  background: linear-gradient(
+  background: rgba(2, 3, 25, 1) 41% !important;
+  /* background: linear-gradient(
     179deg,
     rgba(2, 3, 25, 1) 41%,
     rgba(58, 62, 199, 1) 100%
-  );
+  ); */
 }
 .bg-main {
   /* background-color: #020319; */
@@ -79,10 +79,13 @@ body {
   );
 }
 .hero-back {
-  background: url("../public/heroImage.png") no-repeat;
+  background: url("../public/hero2.png") no-repeat;
   background-size: contain;
 }
-
+.ideh-back {
+  background: url("../public/idehImage.png") no-repeat;
+  background-size: contain;
+}
 * {
   border-color: hsl(var(--border));
 }

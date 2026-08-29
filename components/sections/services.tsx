@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Code2, Smartphone, Bot } from "lucide-react";
+import { Code2, Smartphone, Pencil, Siren } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -12,7 +12,6 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { type Locale } from "@/lib/i18n/locales";
-
 export function ServicesSection({
   content,
   locale,
@@ -25,25 +24,28 @@ export function ServicesSection({
   };
   locale: Locale;
 }) {
-  const icons = [Code2, Smartphone, Bot];
+  const icons = [Siren, Smartphone, Code2, Pencil];
 
   return (
     <section
       id="services"
-      className="relative mx-auto w-full   px-6 py-24 z-10 bg-main "
+      className="relative mx-auto w-full flex   px-6 pt-24 pb-10 z-10 bg-main "
     >
       <div className="max-w-3xl space-y-6">
-        <span className="inline-flex w-fit items-center gap-2 rounded-lg border border-white/10  backdrop-blur-md px-4 py-1.5 text-xs font-medium tracking-wider text-[#7779cd]">
+        <span className="inline-flex w-fit items-center gap-2 rounded-lg border border-white/10  backdrop-blur-md px-4 py-1.5 text-sm font-medium tracking-wider text-[#7779cd]">
           {content.eyebrow}
         </span>
-        <h2 className="text-4xl tracking-tight text-white sm:text-5xl">
+        <h2
+          className="text-5xl tracking-tight text-white "
+          style={{ lineHeight: "4rem" }}
+        >
           {content.title}
         </h2>
         <p className="text-sm leading-relaxed text-neutral-400 font-light">
           {content.intro}
         </p>
       </div>
-      <div className="mt-16 grid gap-6 md:grid-cols-3">
+      <div className="mt-16 grid gap-6 md:grid-cols-4">
         {content.items.map((item, index) => {
           const Icon = icons[index % icons.length];
           return (
@@ -58,28 +60,29 @@ export function ServicesSection({
                 <div className="absolute top-0 right-0 p-3 opacity-[0.03] transform translate-x-4 -translate-y-4 group-hover:scale-110 transition-transform duration-700 text-white">
                   <Icon size={120} />
                 </div>
-                <CardHeader className="relative z-10">
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white">
+                <CardHeader className="relative flex justify-center flex-col items-center z-10">
+                  <div className="mb-4 inline-flex h-12 w-12 items-center m-auto justify-center rounded-full bg-white/10 text-white">
                     <Icon size={24} strokeWidth={1.5} />
                   </div>
                   <CardTitle className="text-xl font-medium text-white">
                     {item.title}
                   </CardTitle>
-                  <CardDescription className="text-neutral-400 mt-2 font-light">
+                  <CardDescription className="text-neutral-400 flex  mt-2 font-light">
                     {item.summary}
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-6 relative z-10">
-                  <p className="text-sm leading-relaxed text-neutral-500">
+                <CardContent className="space-y-6 relative flex justify-center  z-10">
+                  {/* <p className="text-sm leading-relaxed text-neutral-500">
                     {item.details}
-                  </p>
-                  <Button
-                    asChild
-                    variant="ghost"
-                    className="px-0 text-white hover:text-neutral-300 hover:bg-transparent font-medium"
+                  </p> */}
+
+                  <Link
+                    className="border rounded-full px-3 py-2"
+                    href={`/${locale}/contact`}
                   >
-                    <Link href={`/${locale}/contact`}>مشاوره پروژه &larr;</Link>
-                  </Button>
+                    {" "}
+                    &larr;
+                  </Link>
                 </CardContent>
               </Card>
             </motion.div>
