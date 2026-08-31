@@ -5,7 +5,7 @@ export const faHomeContent = {
     description:
       "تیمی متخصص برای خلق بهترین تجربه‌های دیجیتال و اجرای پروژه‌های شما با بالاترین کیفیت و سرعت.",
     primaryCta: { label: "شروع پروژه", href: "/contact" },
-    secondaryCta: { label: "مشاهده خدمات", href: "/services" },
+    secondaryCta: { label: "مشاهده نمونه کارها", href: "/services" },
     heroImage: "/heroImage.png",
     quickLinks: [
       { label: "خدمات", href: "#services" },
@@ -42,9 +42,40 @@ export const faHomeContent = {
     ],
   },
   aboutPreview: {
-    eyebrow: "درباره ما",
-    title: "تیمی متشکل از برنامه‌نویسان باسابقه و متخصص",
-    body: "ما روی کیفیت، سرعت و معماری اصولی نرم‌افزار تمرکز داریم تا بهترین نتیجه را برای شما خلق کنیم.",
+    // eyebrow: "درباره ما",
+    // title: "تیمی متشکل از برنامه‌نویسان باسابقه و متخصص",
+    // body: "ما روی کیفیت، سرعت و معماری اصولی نرم‌افزار تمرکز داریم تا بهترین نتیجه را برای شما خلق کنیم.",
+    items: [
+      {
+        number: "7",
+        title: "  تیم متخصص      ",
+        icon: "user.svg",
+      },
+      {
+        number: "500+",
+
+        title: "   مشتری فعال  ",
+        icon: "customer.svg",
+      },
+      {
+        number: "%97",
+
+        title: " رضایت مشتریان    ",
+        icon: "consent.svg",
+      },
+      {
+        number: "20+",
+
+        title: "  پروژه موفق ",
+        icon: "project.svg",
+      },
+      {
+        number: "7+",
+
+        title: " سال تجربه",
+        icon: "date.svg",
+      },
+    ],
   },
   whyChooseUs: {
     eyebrow: "همین حالا شروع کنید  ",
@@ -64,19 +95,19 @@ export const faHomeContent = {
     ],
   },
   techStack: {
-    eyebrow: "تکنولوژی‌های مدرن",
-    title: "ابزارهایی که برای توسعه استفاده می‌کنیم",
-    description:
-      "استفاده از به‌روزترین و قدرتمندترین فریم‌ورک‌های توسعه برای تضمین سرعت، امنیت و مقیاس‌پذیری نرم‌افزار شما.",
+    eyebrow: "تکنولوژی‌های ما",
+    // title: "ابزارهایی که برای توسعه استفاده می‌کنیم",
+    // description:
+    //   "استفاده از به‌روزترین و قدرتمندترین فریم‌ورک‌های توسعه برای تضمین سرعت، امنیت و مقیاس‌پذیری نرم‌افزار شما.",
     items: [
-      "React",
-      "Next.js",
-      "Node.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "PostgreSQL",
-      "Framer Motion",
-      "Docker",
+      { text: "C#", img: "/net.svg" },
+      { text: "Next.js", img: "/next.svg" },
+      { text: "Node.js", img: "/node.svg" },
+      { text: "TypeScript", img: "ts.svg" },
+      { text: "Tailwind CSS", img: "tailwind.svg" },
+      { text: "PostgreSQL", img: "postgr.svg" },
+      { text: "Framer Motion", img: "framer.svg" },
+      { text: "Docker", img: "docker.svg" },
     ],
   },
   portfolio: {

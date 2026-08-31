@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, Link } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "../ui/button";
 import { Locale } from "@/lib/i18n/locales";
+import Link from "next/link";
 
 export function WhyChooseUsSection({
   content,
@@ -22,9 +23,9 @@ export function WhyChooseUsSection({
   return (
     <section
       id="why-us"
-      className="mx-auto w-full px-6 py-24 z-10 relative bg-main  ideh-back"
+      className="mx-auto w-full pr-2 py-24 z-10 relative bg-main  ideh-back"
     >
-      <div className="space-y-8 rounded-2xl    bg-white/[0.01] p-5 lg:p-18 relative overflow-hidden">
+      <div className="space-y-8 rounded-2xl  bg-white/[0.01] p-5 lg:p-18 relative overflow-hidden">
         <div className="relative z-10">
           <span className="inline-flex w-fit items-center gap-2 rounded-lg border border-white/10  backdrop-blur-md px-2 text-sm font-medium tracking-wider text-[#7779cd]">
             <img src="/h-icon.png" className="w-10 h-10" alt="" />

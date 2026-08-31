@@ -29,7 +29,7 @@ export function ServicesSection({
   return (
     <section
       id="services"
-      className="relative mx-auto w-full flex   px-6 pt-24 pb-10 z-10 bg-main "
+      className="relative mx-auto w-full flex max-md:flex-col px-3  md:px-6 pt-10  md:pb-10 z-10 bg-main "
     >
       <div className="max-w-3xl space-y-6">
         <span className="inline-flex w-fit items-center gap-2 rounded-lg border border-white/10  backdrop-blur-md px-4 py-1.5 text-sm font-medium tracking-wider text-[#7779cd]">

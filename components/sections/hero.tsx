@@ -27,7 +27,7 @@ export function HeroSection({
       {/* Extremely subtle minimalist spotlight */}
       <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-white/[0.03] rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="relative mx-auto grid min-h-[85vh] w-full   gap-12 px-6 py-20 lg:grid-cols-[1.2fr_1fr] items-center z-10">
+      <div className="relative mx-auto grid min-h-[85vh] w-full   gap-12 px-3  md:px-6 py-20 lg:grid-cols-[1.2fr_1fr] items-center z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

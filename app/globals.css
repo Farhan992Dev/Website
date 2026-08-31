@@ -51,7 +51,7 @@ body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
   font-family: var(--app-font);
-  background: rgba(2, 3, 25, 1) 41% !important;
+  background: #020319 41% !important;
   /* background: linear-gradient(
     179deg,
     rgba(2, 3, 25, 1) 41%,
@@ -85,6 +85,11 @@ body {
 .ideh-back {
   background: url("../public/idehImage.png") no-repeat;
   background-size: contain;
+}
+.team-back {
+  background: url("../public/teamImage.png") no-repeat;
+  background-size: contain;
+  background-position: right;
 }
 * {
   border-color: hsl(var(--border));

@@ -52,8 +52,8 @@ export default async function LocaleHomePage({ params }: { params: { locale: str
       {isVisible('hero') && <HeroSection locale={locale} content={content.home.hero} />}
       {isVisible('services') && <ServicesSection locale={locale} content={content.home.services} />}
       {isVisible('portfolio') && <PortfolioSection content={dynamicPortfolio} />}
-      {/* {isVisible('about') && <AboutSection content={{ ...content.home.aboutPreview, body: content.home.aboutPreview.body }} />} */}
-      {/* {isVisible('tech-stack') && <TechStackSection content={content.home.techStack} />} */}
+      {isVisible('about') && <AboutSection content={{ ...content.home.aboutPreview, body: content.home.aboutPreview.body }} />}
+      {isVisible('tech-stack') && <TechStackSection content={content.home.techStack} />}
       {isVisible('why-us') && <WhyChooseUsSection locale={locale}   content={content.home.whyChooseUs} />}
       {/* {isVisible('contact') && <ContactSection content={content.home.contact} />} */}
       <script

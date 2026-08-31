@@ -17,7 +17,7 @@ export function PortfolioSection({
   return (
     <section
       id="portfolio"
-      className="relative mx-auto w-full  px-6 pt-24 pb-10 z-10 bg-main "
+      className="relative mx-auto w-full px-3  md:px-6 pt-24 pb-20 z-10 bg-main "
     >
       <div className="max-w-3xl space-y-6">
         <span className="inline-flex w-fit items-center gap-2 rounded-lg border border-white/10  backdrop-blur-md px-2 text-sm font-medium tracking-wider text-[#7779cd]">

@@ -3,6 +3,7 @@ export const faNavigation = {
   items: [
     { label: 'خانه', href: '/' },
     { label: 'خدمات', href: '/services' },
+    { label: 'نمونه کارها', href: '/about' },
     { label: 'درباره ما', href: '/about' },
     { label: 'تماس با ما', href: '/contact' }
   ],
