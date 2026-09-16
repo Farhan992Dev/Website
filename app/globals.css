@@ -72,10 +72,14 @@ body {
 }
 .gradiant {
   background: #66104c;
-  background: linear-gradient(
-    250deg,
-    rgba(102, 16, 76, 1) 0%,
-    rgba(17, 18, 128, 1) 57%
+  background: linear-gradient(250deg, rgba(102, 16, 76, 1) 0%, #111280 57%);
+}
+.gradiant-options {
+  background: #ffffff;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(17, 18, 128, 0.47) 100%
   );
 }
 .hero-back {
@@ -90,6 +94,10 @@ body {
   background: url("../public/teamImage.png") no-repeat;
   background-size: contain;
   background-position: right;
+}
+.service-back {
+  background: url("../public/service.png") no-repeat;
+  background-size: contain;
 }
 * {
   border-color: hsl(var(--border));

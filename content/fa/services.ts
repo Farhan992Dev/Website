@@ -1,22 +1,48 @@
 export const faServicesContent = {
-  eyebrow: 'خدمات',
-  title: 'خدماتی که برای جذب پروژه طراحی شده‌اند',
-  intro: 'هر سرویس به‌صورت واضح معرفی می‌شود تا بازدیدکننده بدون سردرگمی انتخاب کند.',
+  eyebrow: "خدمات",
+  title: "نمونه کار های ما",
+  title2: "ایده ها به واقعیت تبدیل میشوند",
+  intro: "در این بخش،بخشی از پروژه های موفق و همکارهای ما را مشاهده میکنید.",
   offerings: [
     {
-      title: 'طراحی فروشگاه آنلاین',
-      summary: 'فروشگاه‌هایی برای فروش آنلاین و توسعه آینده',
-      bullets: ['پرداخت ساده', 'ساختار مقیاس‌پذیر', 'تجربه خرید روان']
+      title: "طراحی فروشگاه آنلاین",
+      summary: "فروشگاه سازه و پنل های خورشیدی",
+      tech: ["React", "TypeScript", "Mui"],
+      link: "https://ecosaze.com",
+      tags: "websit",
+      tags_persian: "وب سایت",
     },
     {
-      title: 'ساخت اپلیکیشن',
-      summary: 'طراحی و برنامه‌نویسی اپلیکیشن‌های بومی و کراس‌پلتفرم',
-      bullets: ['رابط کاربری مدرن', 'عملکرد سریع', 'مناسب اندروید و iOS']
+      title: "طراحی مغازه آنلاین",
+      summary: "فروشگاه سازه و پنل های خورشیدی",
+      tech: ["React", "TypeScript", "React Query"],
+      link: "https://ecosaze.com",
+      tags: "websit",
+      tags_persian: "وب سایت",
     },
     {
-      title: 'ربات تلگرام',
-      summary: 'اتوماسیون خدمات و فروش از طریق ربات‌های هوشمند',
-      bullets: ['سرعت بالا', 'کاربری آسان', 'اتصال به درگاه پرداخت']
-    }
-  ]
+      title: " فروشگاه آنلاین",
+      summary: "فروشگاه سازه و پنل های خورشیدی",
+      tech: ["Nextjs", "TypeScript", "Mui"],
+      link: "https://ecosaze.com",
+      tags: "ecommers",
+      tags_persian: "فروشگاه",
+    },
+    {
+      title: "اپلیکشین فروشگاه آنلاین",
+      summary: "فروشگاه سازه و پنل های خورشیدی",
+      tech: ["React Native", "TypeScript", "Mui"],
+      link: "https://ecosaze.com",
+      tags: "app",
+      tags_persian: "اپلیکیشن",
+    },
+    {
+      title: "اپلیکشین مغازه آنلاین",
+      summary: "فروشگاه سازه و پنل های خورشیدی",
+      tech: ["React", "TypeScript", "Mui"],
+      link: "https://ecosaze.com",
+      tags: "app",
+      tags_persian: "اپلیکیشن",
+    },
+  ],
 } as const;
