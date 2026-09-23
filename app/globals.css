@@ -59,7 +59,7 @@ body {
   ); */
 }
 .bg-main {
-  /* background-color: #020319; */
+  background-color: #020319;
 }
 .font-14 {
   font-size: 14px !important;
@@ -82,25 +82,55 @@ body {
     rgba(17, 18, 128, 0.47) 100%
   );
 }
+
 .hero-back {
   background: url("../public/hero2.png") no-repeat;
   background-size: contain;
 }
+
 .ideh-back {
   background: url("../public/idehImage.png") no-repeat;
   background-size: contain;
 }
+
 .team-back {
   background: url("../public/teamImage.png") no-repeat;
   background-size: contain;
   background-position: right;
 }
+
 .service-back {
   background: url("../public/service.png") no-repeat;
   background-size: contain;
 }
 * {
   border-color: hsl(var(--border));
+}
+
+.about-hero-back {
+  background: none;
+}
+.aboutUs-back {
+  background: none;
+}
+.contact-back {
+  background: none;
+}
+@media (min-width: 768px) {
+  .about-hero-back {
+    background: url("../public/aboutUs.png") no-repeat;
+    background-position: left;
+  }
+  .aboutUs-back {
+    background: url("../public/aboutUs2.png") no-repeat;
+    background-size: contain;
+    background-position: right;
+  }
+  .contact-back {
+    background: url("../public/contactus2.png") no-repeat;
+    background-size: contain;
+    background-position: left;
+  }
 }
 
 @layer base {

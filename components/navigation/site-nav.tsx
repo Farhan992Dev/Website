@@ -9,6 +9,7 @@ import { localizedPath, type Locale } from "@/lib/i18n/links";
 import { type SiteContent } from "@/types/site";
 import { Button } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export function SiteNav({
   locale,
@@ -23,17 +24,25 @@ export function SiteNav({
 
   return (
     <header className="sticky top-0 z-50 g-main backdrop-blur-xl">
-      <div className="mx-auto flex w-full  items-center justify-center  px-8 py-4">
+      <div className="mx-auto flex w-full  items-center justify-between px-2">
         <Link
           href={localizedPath(locale, "/")}
           className="inline-flex items-center justify-start w-[40%] gap-3 text-[12px] font-bold tracking-wide text-white relative z-[60]"
         >
-          <span className="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-white text-xs font-bold text-black shadow-[0_0_15px_rgba(255,255,255,0.3)]">
-            T
-          </span>
-          <span className="max-w-[11rem] leading-5">
-            {content.navigation.brand}
-          </span>
+          <Image
+            width={600}
+            height={300}
+            src="/logoo.png"
+            alt=""
+            className="hidden md:block w-[85px] h-[75px]"
+          />
+          <Image
+            width={600}
+            height={300}
+            src="/logo.png"
+            alt=""
+            className="block md:hidden w-full"
+          />
         </Link>
 
         {/* Desktop Nav */}

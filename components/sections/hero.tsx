@@ -116,54 +116,12 @@ export function HeroSection({
           </div>
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
           className="relative flex items-center justify-center lg:justify-end"
-        >
-          {/* Minimalist Card */}
-          {/* <div className="relative w-full max-w-md rounded-3xl border border-white/10 bg-main p-8 shadow-2xl ring-1 ring-white/5">
-            <div className="space-y-8">
-              <div className="inline-flex items-center justify-center rounded-full bg-white/10 p-3 text-white">
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-medium text-white leading-snug">
-                تخصص در پیاده‌سازی پروژه‌های پیچیده
-              </h3>
-              <p className="text-neutral-400 leading-relaxed font-light">
-                معماری اصولی، کدهای بهینه و رابط کاربری چشم‌نواز؛ هر آنچه برای
-                درخشش در دنیای دیجیتال نیاز دارید.
-              </p>
-              <div className="grid grid-cols-2 gap-4 pt-2">
-                <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-5">
-                  <p className="text-2xl font-semibold text-white">۱۰۰٪</p>
-                  <p className="text-xs text-neutral-500 mt-1 uppercase tracking-widest">
-                    تضمین کیفیت
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-5">
-                  <p className="text-2xl font-semibold text-white">۲۴/۷</p>
-                  <p className="text-xs text-neutral-500 mt-1 uppercase tracking-widest">
-                    پشتیبانی
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div> */}
-        </motion.div>
+        ></motion.div> */}
       </div>
     </section>
   );

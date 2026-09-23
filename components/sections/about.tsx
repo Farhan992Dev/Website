@@ -29,7 +29,7 @@ export function AboutSection({
         className="gap-12 rounded-[3rem] flex justify-end  py-10 border-white/5 bg-white/[0.01] p-3"
       >
         <div className="grid grid-cols-3 md:grid-cols-5 gap-3 md:gap-20 w-full">
-          {content.items.map((item, index) => {
+          {content?.items.map((item, index) => {
             return (
               <motion.div
                 key={item.title}
@@ -49,8 +49,6 @@ export function AboutSection({
                       {item.title}
                     </div>
                   </div>
-
-                  {/* آیکون */}
                   <div className="p-1 md:p-5 rounded-full bg-[#550cb533] max-md:order-1">
                     <img
                       src={item?.icon}

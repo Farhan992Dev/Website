@@ -57,15 +57,15 @@ export function ServicesPageSection({
   return (
     <section
       id="services"
-      className="relative mx-auto w-full flex-col px-3 md:px-6 pt-10  md:pb-10 z-10 bg-main "
+      className="relative mx-auto w-full flex-col px-3 md:px-6 md:pt-10 pt-5  md:pb-10 z-10 bg-main "
     >
-      <div className="flex flex-col  service-back  min-h-[50vh]  justify-center gap-8">
-        <span className="inline-flex w-fit items-center gap-2 rounded-lg border border-white/10  backdrop-blur-md px-2 text-sm font-medium tracking-wider text-[#7779cd]">
+      <div className="flex flex-col  service-back min-h-[40vh] md:min-h-[50vh]  justify-center gap-8">
+        <span className="hidden md:inline-flex w-fit items-center gap-2 rounded-lg border border-white/10  backdrop-blur-md px-2 text-sm font-medium tracking-wider text-[#7779cd]">
           <img src="/h-icon.png" className="w-10 h-10" alt="" />
           {content.eyebrow}
         </span>
 
-        <h1 className="text-xl font-bold tracking-tight flex flex-col text-white  lg:text-[3.5rem] leading-[1.1]">
+        <h1 className="text-xl font-bold mt-[12rem]  tracking-tight flex flex-col text-white  lg:text-[3.5rem] leading-[1.1]">
           <p className="[text-shadow:0_0_10px_rgba(119,121,205,0.5)]">
             {content.title}
           </p>
@@ -78,7 +78,7 @@ export function ServicesPageSection({
           {content.intro}
         </p>
       </div>
-      <div className="flex flex-wrap gap-4 mt-2">
+      <div className="flex flex-wrap  mt-2 gap-4">
         <Button
           asChild
           size="default"
@@ -116,7 +116,7 @@ export function ServicesPageSection({
           </Link>
         </Button>
       </div>
-      <div key={filter} className="mt-[6rem] grid gap-6 md:grid-cols-4">
+      <div key={filter} className="mt-5 md:mt-[6rem] grid gap-6 md:grid-cols-4">
         {filteredItems?.map((item, index) => {
           const Icon = icons[index % icons.length];
 

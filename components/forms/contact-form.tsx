@@ -213,7 +213,7 @@ export function ContactForm({
         <Button
           type="submit"
           size="lg"
-          className="w-full rounded-full bg-white text-black hover:bg-neutral-200 font-bold h-12"
+          className="w-full rounded-lg bg-white text-black hover:bg-neutral-200 font-bold h-12"
         >
           {labels.submit}
         </Button>

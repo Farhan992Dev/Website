@@ -30,19 +30,19 @@ export default function ContactPage({
   const content = getSiteContent(locale);
 
   return (
-    <div className="bg-main min-h-[calc(100vh-80px)] pt-20">
-      <section className="mx-auto grid w-full gap-16 px-6 lg:grid-cols-[1fr_1.2fr] lg:px-8 pb-24">
-        <div className="space-y-8 mt-10">
-          <span className="inline-flex w-fit items-center gap-2 rounded-lg border border-white/10  backdrop-blur-md px-4 py-1.5 text-md font-medium tracking-wider text-[#7779cd]">
+    <div className="bg-main md:min-h-[calc(100vh-80px)] pt-10 md:pt-20">
+      <section className="mx-auto flex flex-col w-full gap-16 px-2 md:px-5 pb-24">
+        <div className="space-y-8 contact-back mt-10">
+          <span className="inline-flex w-fit items-center gap-2 rounded-lg border border-white/10  backdrop-blur-md px-2 text-sm font-medium tracking-wider text-[#7779cd]">
+            <img src="/h-icon.png" className="w-10 h-10" alt="" />
             {content.contact.eyebrow}
           </span>
-          <h1
-            className="text-5xl font-bold tracking-tight text-white "
-            style={{ lineHeight: "4rem" }}
-          >
+
+          <h1 className="max-w-3xl text-2xl font-bold tracking-tight text-[#8b54f1] [text-shadow:0_0_10px_rgba(119,121,205,0.5)] sm:text-xl lg:text-[4.5rem] leading-[1.1]">
             {content.contact.title}
           </h1>
-          <p className="text-sm leading-relaxed text-neutral-400 font-light">
+
+          <p className="max-w-xl font-14 leading-relaxed text-neutral-400">
             {content.contact.intro}
           </p>
 
@@ -51,41 +51,26 @@ export default function ContactPage({
               راه‌های ارتباطی مستقیم
             </p>
             <div className="flex flex-wrap gap-4">
-              <div className="flex items-center gap-2 rounded-lg border border-white/10 py-2 backdrop-blur-md px-4  text-lg font-medium tracking-wider text-[#7779cd]">
-                <img src="/email.svg" className="w-10 h-7" alt="" />
-                <a href={`mailto:${content.company.email}`}>ایمیل</a>
+              <div className="flex items-center rounded-full border border-white/10 py-3 px-2">
+                <a href={`mailto:${content.company.email}`}>
+                  <img src="/email.svg" className="w-10 h-7" alt="" />
+                </a>
               </div>
-              <div className="flex items-center gap-2 rounded-lg border border-white/10 py-2  backdrop-blur-md px-4  text-lg font-medium tracking-wider text-[#7779cd]">
-                <img src="/whatsapp.svg" className="w-10 h-7" alt="" />
-                <a href={`mailto:${content.company.messagingUrl}`}>واتساپ</a>
+              <div className="flex items-center rounded-full border border-white/10 py-3 px-2">
+                <a href={`mailto:${content.company.messagingUrl}`}>
+                   <img src="/whatsapp.svg" className="w-10 h-7" alt="" />
+                </a>
               </div>
-              <div className="flex items-center gap-2 rounded-lg border border-white/10 py-2  backdrop-blur-md px-4  text-lg font-medium tracking-wider text-[#7779cd]">
-                <img src="/phone.svg" className="w-10 h-7" alt="" />
-                <a href={`mailto:${content.company.phone}`}>ایمیل</a>
+              <div className="flex items-center rounded-full border border-white/10 py-3 px-2">
+                <a href={`tel:${content.company.phone}`}>
+                  <img src="/phone.svg" className="w-10 h-7" alt="" />
+                </a>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="rounded-[3rem] border border-white/5 bg-white/[0.01] p-8 sm:p-12 relative overflow-hidden">
-          {/* <div className="absolute top-0 right-0 pt-2 px-8">
-            <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/5 text-white/50 border border-white/10">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="m22 2-7 20-4-9-9-4Z" />
-                <path d="M22 2 11 13" />
-              </svg>
-            </span>
-          </div> */}
+        <div className="rounded-[1rem] w-full  md:w-[50%] mx-auto border border-white/5 bg-white/[0.01] p-4 sm:p-12 relative overflow-hidden">
           <div className=" mb-10">
             <h2 className="text-2xl font-bold text-white mb-2">
               فرم درخواست پروژه

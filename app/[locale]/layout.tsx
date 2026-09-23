@@ -41,7 +41,7 @@ export default function LocaleLayout({
         <main className="w-[90%] m-auto max-md:w-full max-md:px-3">
           {children}
         </main>
-        {/* <Footer content={content} /> */}
+        <Footer content={content} />
       </SmoothScrollProvider>
     </div>
   );
