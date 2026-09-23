@@ -113,6 +113,13 @@ export function HeroSection({
               height={40}
               alt="ts"
             />
+            <Image
+              src={"/wordperss.png"}
+              className="border rounded-xl py-2 px-1"
+              width={55}
+              height={40}
+              alt="ts"
+            />
           </div>
         </motion.div>
 
