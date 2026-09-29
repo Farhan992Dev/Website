@@ -18,18 +18,16 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { type Locale } from "@/lib/i18n/locales";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { localizedPath } from "@/lib/i18n/links";
+import { usePathname, useSearchParams } from "next/navigation";
+
 import Image from "next/image";
+import { useEffect, useState } from "react";
+
 export function ServicesPageSection({
   content,
   locale,
 }: {
   content: {
-    eyebrow: string;
-    title: string;
-    title2: string;
-    intro: string;
     items: Array<{
       title: string;
       summary: string;
@@ -37,6 +35,7 @@ export function ServicesPageSection({
       link?: string;
       tags: string;
       tags_persian: string;
+      image: string;
     }>;
   };
   locale: Locale;
@@ -44,14 +43,26 @@ export function ServicesPageSection({
   const pathname = usePathname();
   const serchParams = useSearchParams();
   const icons = [Siren, Smartphone, Code2, Pencil];
+  const [categoryData, setCategoryData] = useState([]);
   const filter = serchParams.get("filter") || "";
+
+  useEffect(() => {
+    const getCategories = async () => {
+      const response = await fetch("http://localhost:4000/category/getAll");
+
+      const data = await response.json();
+      setCategoryData(data?.category);
+    };
+
+    getCategories();
+  }, []);
 
   const filteredItems =
     content &&
     content?.items?.filter((item) => {
       if (!filter) return true;
 
-      return filter === "" || item.tags === filter;
+      return filter === "" || item?.category?.title === filter;
     });
 
   return (
@@ -62,23 +73,23 @@ export function ServicesPageSection({
       <div className="flex flex-col  service-back min-h-[40vh] md:min-h-[50vh]  justify-center gap-8">
         <span className="hidden md:inline-flex w-fit items-center gap-2 rounded-lg border border-white/10  backdrop-blur-md px-2 text-sm font-medium tracking-wider text-[#7779cd]">
           <img src="/h-icon.png" className="w-10 h-10" alt="" />
-          {content.eyebrow}
+          خدمات
         </span>
 
         <h1 className="text-xl font-bold mt-[12rem]  tracking-tight flex flex-col text-white  lg:text-[3.5rem] leading-[1.1]">
           <p className="[text-shadow:0_0_10px_rgba(119,121,205,0.5)]">
-            {content.title}
+            نمونه کار های ما
           </p>
           <p className="text-[#8b54f1] mt-4 [text-shadow:0_0_10px_rgba(119,121,205,0.5)]">
-            {content.title2}
+            ایده ها به واقعیت تبدیل میشوند
           </p>
         </h1>
 
         <p className="text-sm leading-relaxed  text-neutral-400 font-light">
-          {content.intro}
+          در این بخش،بخشی از پروژه های موفق و همکارهای ما را مشاهده میکنید.
         </p>
       </div>
-      <div className="flex flex-wrap  mt-2 gap-4">
+      <div className="flex flex-wrap mt-5 gap-4">
         <Button
           asChild
           size="default"
@@ -88,38 +99,21 @@ export function ServicesPageSection({
             همه
           </Link>
         </Button>
-        <Button
-          asChild
-          size="default"
-          className={` ${filter == "websit" ? "gradiant  text-white " : "gradiant-options text-white border border-[#111280] "} rounded-xl transition-all hover:scale-105`}
-        >
-          <Link href={`/${locale}/services?filter=websit`} replace>
-            وب سایت
-          </Link>
-        </Button>
-        <Button
-          asChild
-          size="default"
-          className={` ${filter == "app" ? "gradiant  text-white " : "gradiant-options text-white border border-[#111280] "} rounded-xl transition-all hover:scale-105`}
-        >
-          <Link href={`/${locale}/services?filter=app`} replace>
-            اپلیکیشن
-          </Link>
-        </Button>
-        <Button
-          asChild
-          size="default"
-          className={` ${filter == "ecommers" ? "gradiant  text-white " : "gradiant-options text-white border border-[#111280] "} rounded-xl transition-all hover:scale-105`}
-        >
-          <Link href={`/${locale}/services?filter=ecommers`} replace>
-            فروشگاه اینترنتی
-          </Link>
-        </Button>
+        {categoryData?.length > 0 &&
+          categoryData?.map((item) => (
+            <Button
+              asChild
+              size="default"
+              className={` ${filter == item?.title ? "gradiant  text-white " : "gradiant-options text-white border border-[#111280] "} rounded-xl transition-all hover:scale-105`}
+            >
+              <Link href={`/${locale}/services?filter=${item?.title}`} replace>
+                {item.title}{" "}
+              </Link>
+            </Button>
+          ))}
       </div>
-      <div key={filter} className="mt-5 md:mt-[6rem] grid gap-6 md:grid-cols-4">
+      <div key={filter} className="mt-5 md:mt-[3rem] grid gap-6 md:grid-cols-4">
         {filteredItems?.map((item, index) => {
-          const Icon = icons[index % icons.length];
-
           return (
             <motion.div
               key={item.title}
@@ -132,13 +126,13 @@ export function ServicesPageSection({
                 <CardHeader className="relative flex flex-col z-10">
                   <div className="flex w-full justify-end">
                     <div className="mb-4 font-12 inline-flex py-1 px-2 rounded-lg gradiant-options text-white">
-                      {item.tags_persian}
+                      {item.category?.title}
                     </div>
                   </div>
                   <div>
                     <Image
                       alt={item.title}
-                      src={"/b-1.png"}
+                      src={`http://localhost:4000${item.image}`}
                       className="object-fill! rounded-xl h-full w-full"
                       width={700}
                       height={500}

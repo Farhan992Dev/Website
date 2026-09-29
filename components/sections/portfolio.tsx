@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card";
+import Image from "next/image";
 
 export function PortfolioSection({
   content,
+  data,
 }: {
   content: {
     eyebrow: string;
@@ -36,7 +37,7 @@ export function PortfolioSection({
       </div>
 
       <div className="mt-16 grid gap-6 md:grid-cols-5">
-        {content.items.map((project, index) => (
+        {data.map((project, index) => (
           <motion.div
             key={project.title}
             initial={{ opacity: 0, y: 30 }}
@@ -47,14 +48,24 @@ export function PortfolioSection({
             <Card className="group h-full p-3 border-white/5 bg-white/[0.02] transition-all duration-500 hover:-translate-y-2 hover:bg-white/5 hover:border-white/10 relative overflow-hidden rounded-3xl">
               <div className="aspect-[6/5] w-full rounded-2xl bg-white/5 border border-white/5 group-hover:border-white/10 transition-colors flex items-center justify-center">
                 {/* Placeholder for project image/graphic */}
-                <span className="text-neutral-600 font-mono text-sm tracking-widest uppercase">
-                  Project Preview
-                </span>
+                {project.image ? (
+                  <Image
+                    alt={project.title}
+                    src={`http://localhost:4000${project.image}`}
+                    className="object-fill! rounded-xl h-full w-full"
+                    width={700}
+                    height={500}
+                  />
+                ) : (
+                  <span className="text-neutral-600 font-mono text-sm tracking-widest uppercase">
+                    Project Preview
+                  </span>
+                )}
               </div>
               <div className="relative pt-6 pb-3 flex justify-center flex-col items-center z-10">
                 <div className="flex items-center flex-col justify-center">
                   <CardDescription className=" text-xl text-white font-medium flex">
-                    {project.category}
+                    {project.type}
                   </CardDescription>
                   <CardTitle className="text-sm mt-3 text-neutral-400">
                     {project.title}

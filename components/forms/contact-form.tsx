@@ -19,11 +19,11 @@ import {
 } from "@/lib/validation/contact";
 
 type ContactFormValues = {
-  fullName: string;
+  nameFamily: string;
   email: string;
-  phone?: string;
-  serviceInterest?: string;
-  message: string;
+  phoneNumber?: string;
+  service?: string;
+  description: string;
   locale: ContactLocale;
 };
 
@@ -53,31 +53,31 @@ export function ContactForm({
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(schema),
     defaultValues: {
-      fullName: "",
+      nameFamily: "",
       email: "",
-      phone: "",
-      serviceInterest: "",
-      message: "",
+      phoneNumber: "",
+      service: "",
+      description: "",
       locale,
     },
   });
 
   async function onSubmit(values: ContactFormValues) {
     setStatus("idle");
-    const response = await fetch("/api/contact", {
+    const response = await fetch(`${process.env.backAPI}/contactUs/create`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(values),
     });
 
     setStatus(response.ok ? "success" : "error");
-    if (response.ok) {
+    if (response.status == 200) {
       form.reset({
-        fullName: "",
+        nameFamily: "",
         email: "",
-        phone: "",
-        serviceInterest: "",
-        message: "",
+        phoneNumber: "",
+        service: "",
+        description: "",
         locale,
       });
     }
@@ -89,7 +89,7 @@ export function ContactForm({
         <div className="grid gap-4 sm:grid-cols-2">
           <FormField
             control={form.control}
-            name="fullName"
+            name="nameFamily"
             render={({ field, fieldState }) => (
               <FormItem>
                 <FormLabel className="text-neutral-300 font-medium">
@@ -136,7 +136,7 @@ export function ContactForm({
         <div className="grid gap-4 sm:grid-cols-2">
           <FormField
             control={form.control}
-            name="phone"
+            name="phoneNumber"
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-neutral-300 font-medium">
@@ -153,7 +153,7 @@ export function ContactForm({
           />
           <FormField
             control={form.control}
-            name="serviceInterest"
+            name="service"
             render={({ field, fieldState }) => (
               <FormItem>
                 <FormLabel className="text-neutral-300 font-medium">
@@ -189,7 +189,7 @@ export function ContactForm({
         </div>
         <FormField
           control={form.control}
-          name="message"
+          name="description"
           render={({ field, fieldState }) => (
             <FormItem>
               <FormLabel className="text-neutral-300 font-medium">
