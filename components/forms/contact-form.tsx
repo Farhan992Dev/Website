@@ -64,11 +64,14 @@ export function ContactForm({
 
   async function onSubmit(values: ContactFormValues) {
     setStatus("idle");
-    const response = await fetch(`${process.env.backAPI}/contactUs/create`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(values),
-    });
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BACK_API}/contactUs/create`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      },
+    );
 
     setStatus(response.ok ? "success" : "error");
     if (response.status == 200) {

@@ -26,7 +26,9 @@ export default async function ServicesPage({
   params: { locale: string };
 }) {
   const locale = isLocale(params.locale) ? (params.locale as Locale) : "fa";
-  const respons = await fetch(`${process.env.backAPI}/service/getAllService`);
+  const respons = await fetch(
+    `${process.env.NEXT_PUBLIC_BACK_API}/service/getAllService`,
+  );
   const { data } = await respons.json();
 
   return (

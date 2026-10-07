@@ -53,7 +53,9 @@ export default async function LocaleHomePage({
     console.log("Backend not available, using static defaults");
   }
 
-  const respons = await fetch(`${process.env.backAPI}/service/getAllService`);
+  const respons = await fetch(
+    `${process.env.NEXT_PUBLIC_BACK_API}/service/getAllService`,
+  );
   const { data } = await respons.json();
 
   const isVisible = (section: string) => {

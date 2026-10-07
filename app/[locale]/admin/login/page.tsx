@@ -15,21 +15,21 @@ export default function AdminLogin() {
     setError("");
 
     try {
-      const res = await fetch("http://localhost:8081/api/auth/login", {
+      const res = await fetch(`http://localhost:4000/admin/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ userName: username, password }),
       });
 
       if (res.ok) {
         const data = await res.json();
-        localStorage.setItem("admin_token", data.token);
+        localStorage.setItem("admin_token", data.token?.accessTokenAdmin);
         router.push("/fa/admin");
       } else {
         setError("نام کاربری یا رمز عبور اشتباه است");
       }
     } catch (err) {
-      setError("خطا در ارتباط با سرور بک‌اند (آیا سرور Go در حال اجراست؟)");
+      setError("خطا در ارتباط با سرور بک‌اند");
     }
   };
 
