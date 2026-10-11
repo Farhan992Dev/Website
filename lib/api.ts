@@ -1,4 +1,12 @@
-export const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8081/api';
+const trimTrailingSlash = (value: string) => value.replace(/\/+$/, '');
+
+export const API_URL = trimTrailingSlash(
+  process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8081/api'
+);
+
+export const BACKEND_API_URL = trimTrailingSlash(
+  process.env.BACK_API_URL || process.env.NEXT_PUBLIC_BACK_API_URL || 'http://localhost:4000'
+);
 
 export async function fetchProjects() {
   try {
@@ -30,5 +38,20 @@ export async function logVisitor(path: string) {
     });
   } catch (error) {
     console.error('Error logging visitor:', error);
+  }
+}
+
+export async function fetchServices() {
+  try {
+    const res = await fetch(`${BACKEND_API_URL}/service/getAllService`, {
+      cache: 'no-store',
+    });
+    if (!res.ok) return [];
+
+    const payload = await res.json();
+    return Array.isArray(payload?.data) ? payload.data : [];
+  } catch (error) {
+    console.error('Error fetching services:', error);
+    return [];
   }
 }
