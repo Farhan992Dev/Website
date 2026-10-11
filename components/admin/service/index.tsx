@@ -9,6 +9,7 @@ import {
 import { Input } from "@/components/ui/input";
 import Modal from "@/components/ui/modal";
 import DataTable from "@/components/ui/table";
+import TagListInput from "@/components/ui/tagList";
 import { PenIcon, Trash } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -41,6 +42,8 @@ const ServiceComponent = () => {
   const [openModal, setOpenModal] = useState(false);
   const [openModalEdit, setOpenModalEdit] = useState(false);
   const [image, setImage] = useState<File | null>(null);
+  const [pros, setPros] = useState<string[]>([]);
+
   const storedToken = localStorage.getItem("admin_token");
 
   const fetchService = async () => {
@@ -108,9 +111,9 @@ const ServiceComponent = () => {
     formData.append("title", values.title);
     formData.append("categoryId", values.category);
     formData.append("type", values.type);
-    formData.append("tags", "string");
     formData.append("link", values.link);
     formData.append("description", values.description);
+    formData.append("tags", JSON.stringify(pros));
 
     if (image) {
       formData.append("image", image);
@@ -131,6 +134,46 @@ const ServiceComponent = () => {
       fetchService();
       form.reset({
         title: "",
+      });
+    }
+  }
+
+  async function onSubmitEdit(values: ServiceFormValues) {
+    const formData = new FormData();
+
+    formData.append("title", values.title);
+    formData.append("categoryId", values.category);
+    formData.append("type", values.type);
+    formData.append("link", values.link);
+    formData.append("description", values.description);
+    formData.append("tags", JSON.stringify(pros));
+    formData.append("id", rowId);
+
+    if (image) {
+      formData.append("image", image);
+    }
+
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BACK_API}/service/edit`,
+      {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${storedToken}`,
+        },
+        body: formData,
+      },
+    );
+
+    if (response.status == 200) {
+      handleCloseModalEdit();
+      fetchService();
+      formEdit.reset({
+        title: "",
+        description: "",
+        link: "",
+        type: "",
+        tags: "",
+        category: "",
       });
     }
   }
@@ -198,6 +241,7 @@ const ServiceComponent = () => {
           type: byIdData?.service?.type,
         });
       }
+      setPros(byIdData?.service?.tags);
     }
   }, [byIdData, rowId]);
 
@@ -211,6 +255,7 @@ const ServiceComponent = () => {
       tags: "",
       category: "",
     });
+    setPros();
   };
 
   const handleCloseModalEdit = () => {
@@ -225,6 +270,7 @@ const ServiceComponent = () => {
       tags: "",
       category: "",
     });
+    setPros();
   };
 
   useEffect(() => {
@@ -247,7 +293,7 @@ const ServiceComponent = () => {
       <Modal
         open={openModal}
         onOpenChange={handleCloseModal}
-        title="افزودن پروژه  "
+        title="افزودن پروژه"
       >
         <form className="space-y-5" onSubmit={form.handleSubmit(onSubmit)}>
           <div>
@@ -358,6 +404,12 @@ const ServiceComponent = () => {
                 </FormItem>
               )}
             />
+            <TagListInput
+              label="تگ"
+              color="success"
+              values={pros}
+              onChange={setPros}
+            />
             <FormField
               control={form.control}
               name="description"
@@ -380,7 +432,7 @@ const ServiceComponent = () => {
                   ) : null}
                 </FormItem>
               )}
-            />{" "}
+            />
             <FormField
               control={formEdit.control}
               name="image"
@@ -428,7 +480,7 @@ const ServiceComponent = () => {
         >
           <form
             className="space-y-5"
-            onSubmit={formEdit.handleSubmit(onSubmit)}
+            onSubmit={formEdit.handleSubmit(onSubmitEdit)}
           >
             <div>
               <FormField
@@ -541,6 +593,12 @@ const ServiceComponent = () => {
                     ) : null}
                   </FormItem>
                 )}
+              />
+              <TagListInput
+                label="تگ"
+                color="success"
+                values={pros}
+                onChange={setPros}
               />
               <FormField
                 control={formEdit.control}
