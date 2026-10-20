@@ -21,6 +21,7 @@ export default function AdminLogin() {
         body: JSON.stringify({ userName: username, password }),
       });
 
+      
       if (res.ok) {
         const data = await res.json();
         localStorage.setItem("admin_token", data.token?.accessTokenAdmin);
