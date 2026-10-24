@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
         port: "4000",
         pathname: "/uploads/**",
       },
+      {
+        protocol: "https",
+        hostname: "web-site-back.vercel.app",
+        pathname: "/uploads/**",
+      },
     ],
   },
 };

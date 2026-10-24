@@ -15,13 +15,12 @@ export default function AdminLogin() {
     setError("");
 
     try {
-      const res = await fetch(`http://localhost:4000/admin/login`, {
+      const res = await fetch(`https://web-site-back.vercel.app/admin/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userName: username, password }),
       });
 
-      
       if (res.ok) {
         const data = await res.json();
         localStorage.setItem("admin_token", data.token?.accessTokenAdmin);

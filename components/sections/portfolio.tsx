@@ -15,6 +15,7 @@ export function PortfolioSection({
     items: Array<{ title: string; category: string; href: string }>;
   };
 }) {
+  console.log("Portfolio projects:", data);
   return (
     <section
       id="portfolio"
@@ -48,18 +49,20 @@ export function PortfolioSection({
             <Card className="group h-full p-3 border-white/5 bg-white/[0.02] transition-all duration-500 hover:-translate-y-2 hover:bg-white/5 hover:border-white/10 relative overflow-hidden rounded-3xl">
               <div className="aspect-[6/5] w-full rounded-2xl bg-white/5 border border-white/5 group-hover:border-white/10 transition-colors flex items-center justify-center">
                 {/* Placeholder for project image/graphic */}
-                {project.image ? (
+                {project.image &&
+                project.image !== "undefined" &&
+                project.image !== "null" ? (
                   <Image
                     alt={project.title}
-                    src={`http://localhost:4000${project.image}`}
+                    src={`https://web-site-back.vercel.app/${project.image.replace(/^\/+/, "")}`}
                     className="object-fill! rounded-xl h-full w-full"
                     width={700}
                     height={500}
                   />
                 ) : (
-                  <span className="text-neutral-600 font-mono text-sm tracking-widest uppercase">
-                    Project Preview
-                  </span>
+                  <div className="flex h-full w-full items-center justify-center rounded-xl bg-gray-100">
+                    تصویر موجود نیست
+                  </div>
                 )}
               </div>
               <div className="relative pt-6 pb-3 flex justify-center flex-col items-center z-10">

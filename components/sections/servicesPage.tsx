@@ -48,7 +48,9 @@ export function ServicesPageSection({
 
   useEffect(() => {
     const getCategories = async () => {
-      const response = await fetch("http://localhost:4000/category/getAll");
+      const response = await fetch(
+        "https://web-site-back.vercel.app/category/getAll",
+      );
 
       const data = await response.json();
       setCategoryData(data?.category);
@@ -132,7 +134,8 @@ export function ServicesPageSection({
                   <div>
                     <Image
                       alt={item.title}
-                      src={`http://localhost:4000${item.image}`}
+                      // src={`http://localhost:4000${item.image}`}
+                      src={`https://web-site-back.vercel.app${item.image}`}
                       className="object-fill! rounded-xl h-full w-full"
                       width={700}
                       height={500}
