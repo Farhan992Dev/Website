@@ -31,11 +31,18 @@ const CategoryComponent = () => {
   const storedToken = localStorage.getItem("admin_token");
 
   const featchCategory = async () => {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BACK_API}/category/getAll`,
-    );
-    if (res.ok) {
-      setListData(await res.json());
+    try {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_BACK_API}/category/getAll`,
+      );
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setListData(data);
+      }
+    } catch (error) {
+      console.error("Fetch category error:", error);
     }
   };
   const featchCategoryById = async (id: number) => {

@@ -18,6 +18,11 @@ const nextConfig: NextConfig = {
         hostname: "web-site-back.vercel.app",
         pathname: "/uploads/**",
       },
+      {
+        protocol: "https",
+        hostname: "web-site-back.vercel.app",
+        pathname: "/upload/**",
+      },
     ],
   },
 };
