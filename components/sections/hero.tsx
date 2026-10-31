@@ -48,7 +48,7 @@ export function HeroSection({
           <p className="max-w-xl font-14 leading-relaxed text-neutral-400">
             {content.description}
           </p>
-          <div className="flex flex-wrap gap-4 mt-2">
+          <div className="flex md:flex-wrap max-md:justify-center gap-2 mt-2">
             <Button
               asChild
               size="lg"
@@ -63,7 +63,7 @@ export function HeroSection({
               asChild
               variant="outline"
               size="lg"
-              className="rounded-xl border-white/10 bg-transparent hover:bg-white/5 text-white px-8 transition-all hover:scale-105"
+              className="rounded-xl border-white/10 bg-transparent hover:bg-white/5 text-white transition-all hover:scale-105"
             >
               <Link href={`/${locale}${content.secondaryCta.href}`}>
                 {content.secondaryCta.label}

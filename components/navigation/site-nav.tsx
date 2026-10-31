@@ -99,11 +99,11 @@ export function SiteNav({
         {/* Mobile Header Actions */}
         <div className="flex items-center gap-3 md:hidden relative z-[60]">
           <a
-            href="tel:09354663872"
+            href="/fa/contact"
             className="inline-flex items-center text-xs font-bold text-white bg-white/10 active:bg-white/20 border border-white/20 px-3 py-1.5 rounded-full"
             dir="ltr"
           >
-            0935 466 3872
+            تماس با ما
           </a>
           <button
             className="p-2 text-white bg-transparent"
